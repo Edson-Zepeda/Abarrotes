@@ -1,0 +1,32 @@
+codigo,nombre,categoria,precio_compra,precio_venta,existencia
+P001,Arroz 1 kg,Despensa,24.00,32.00,20
+P002,Frijol 1 kg,Despensa,28.00,38.00,18
+P003,Azucar 1 kg,Despensa,23.00,31.00,25
+P004,Aceite 900 ml,Despensa,38.00,52.00,15
+P005,Sal 1 kg,Despensa,10.00,16.00,30
+P006,Sopa pasta 200 g,Despensa,8.00,13.00,40
+P007,Atun lata,Enlatados,17.00,25.00,24
+P008,Sardina lata,Enlatados,20.00,29.00,12
+P009,Leche 1 L,Lacteos,20.00,28.00,30
+P010,Yogurt 1 L,Lacteos,29.00,42.00,10
+P011,Queso panela 400 g,Lacteos,48.00,65.00,8
+P012,Huevo docena,Basicos,34.00,48.00,20
+P013,Pan blanco,Panaderia,36.00,49.00,14
+P014,Tortillas paquete,Basicos,14.00,22.00,35
+P015,Refresco cola 2 L,Bebidas,28.00,39.00,18
+P016,Agua natural 1.5 L,Bebidas,10.00,16.00,40
+P017,Jugo 1 L,Bebidas,18.00,27.00,16
+P018,Cafe soluble 100 g,Despensa,45.00,62.00,10
+P019,Galletas paquete,Botanas,13.00,21.00,25
+P020,Papas fritas,Botanas,12.00,20.00,30
+P021,Chocolate barra,Dulces,9.00,15.00,35
+P022,Chicle paquete,Dulces,6.00,11.00,50
+P023,Jabon de tocador,Higiene,12.00,19.00,22
+P024,Papel higienico 4 rollos,Higiene,28.00,42.00,15
+P025,Detergente 1 kg,Limpieza,32.00,48.00,12
+P026,Cloro 1 L,Limpieza,13.00,21.00,20
+P027,Servilletas paquete,Hogar,18.00,29.00,18
+P028,Mayonesa 390 g,Despensa,31.00,45.00,10
+P029,Catsup 320 g,Despensa,19.00,30.00,14
+P030,Cereal 500 g,Despensa,42.00,59.00,9
+

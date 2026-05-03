@@ -1,0 +1,12 @@
+out/
+build/
+target/
+dist/
+*.class
+*.jar
+*.log
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
