@@ -2,6 +2,7 @@ out/
 build/
 target/
 dist/
+data/*.db
 *.class
 *.jar
 !lib/*.jar
