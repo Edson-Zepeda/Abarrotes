@@ -4,6 +4,7 @@ target/
 dist/
 *.class
 *.jar
+!lib/*.jar
 *.log
 .idea/
 .vscode/

@@ -1,8 +1,10 @@
-# Sistema de Abarrotes - Equipo 6
+# Sistema de Abarrotes POS Mejorado - Equipo 6
 
 Proyecto final de Programacion IV para el escenario **Abarrotes**.
 
-El objetivo es construir un sistema en Java que permita administrar inventario, clientes, proveedores, compras, ventas, corte de caja y usuarios del sistema, con datos iniciales suficientes para una demostracion completa.
+El objetivo es construir un sistema en Java Swing que permita administrar inventario, clientes, proveedores, compras, ventas, corte de caja y usuarios del sistema, con datos iniciales suficientes para una demostracion completa.
+
+Esta version es una copia mejorada con interfaz tipo punto de venta: login redisenado, menu lateral, dashboard, compras con entrada de mercancia, ventas con buscador de productos, carrito de cobro, tablas no editables y catalogos con formulario lateral.
 
 ## Entregables
 
@@ -38,6 +40,7 @@ El objetivo es construir un sistema en Java que permita administrar inventario, 
 ```text
 data/                 Datos semilla para pruebas y demo
 docs/                 Planeacion, roles, backlog y guias de entrega
+lib/                  Driver SQLite JDBC para la base de datos local
 scripts/              Scripts simples para compilar y ejecutar
 src/main/java/        Codigo fuente Java
 ```
@@ -55,3 +58,6 @@ Ejecutar:
 ```powershell
 .\scripts\run.ps1
 ```
+
+Al ejecutar el sistema se crea la base de datos local `data/abarrotes.db`.
+El login inicial queda con `admin / 1234` y `empleado / 1234`.

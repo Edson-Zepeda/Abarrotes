@@ -7,6 +7,6 @@ if (-not $sourceFiles) {
 }
 
 New-Item -ItemType Directory -Force -Path "out" | Out-Null
-javac -encoding UTF-8 -d out $sourceFiles
+javac -encoding UTF-8 -cp "lib/*" -d out $sourceFiles
 Write-Host "Compilacion completada en out/"
 
