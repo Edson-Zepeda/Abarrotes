@@ -1,4 +1,4 @@
-# Sistema de Abarrotes POS Mejorado - Equipo 6
+# Sistema de Abarrotes Mejorado - Equipo 6
 
 Proyecto final de Programacion IV para el escenario **Abarrotes**.
 

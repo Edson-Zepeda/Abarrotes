@@ -40,7 +40,7 @@ public class ClienteView extends JDialog {
     private ArrayList<Cliente> listaFiltrada = new ArrayList<>();
 
     public ClienteView(JFrame parent) {
-        super(parent, "Clientes - Abarrotes POS", true);
+        super(parent, "Clientes - Abarrotes", true);
         setSize(980, 620);
         setMinimumSize(new Dimension(900, 560));
         setLocationRelativeTo(parent);

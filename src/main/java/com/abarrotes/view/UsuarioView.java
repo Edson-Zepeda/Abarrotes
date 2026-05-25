@@ -45,7 +45,7 @@ public class UsuarioView extends JDialog {
     private ArrayList<Usuario> listaFiltrada = new ArrayList<>();
 
     public UsuarioView(JFrame parent) {
-        super(parent, "Usuarios - Abarrotes POS", true);
+        super(parent, "Usuarios - Abarrotes", true);
         setSize(980, 620);
         setMinimumSize(new Dimension(900, 560));
         setLocationRelativeTo(parent);

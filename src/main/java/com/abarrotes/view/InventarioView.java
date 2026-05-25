@@ -43,7 +43,7 @@ public class InventarioView extends JDialog {
     private ArrayList<Producto> listaFiltrada = new ArrayList<>();
 
     public InventarioView(JFrame parent, ArrayList<Producto> listaProductos) {
-        super(parent, "Inventario - Abarrotes POS", true);
+        super(parent, "Inventario - Abarrotes", true);
         this.listaProductos = listaProductos;
         setSize(980, 620);
         setMinimumSize(new Dimension(900, 560));

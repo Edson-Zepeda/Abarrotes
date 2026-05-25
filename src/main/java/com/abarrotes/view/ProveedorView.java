@@ -40,7 +40,7 @@ public class ProveedorView extends JDialog {
     private ArrayList<Proveedor> listaFiltrada = new ArrayList<>();
 
     public ProveedorView(JFrame parent) {
-        super(parent, "Proveedores - Abarrotes POS", true);
+        super(parent, "Proveedores - Abarrotes", true);
         setSize(980, 620);
         setMinimumSize(new Dimension(900, 560));
         setLocationRelativeTo(parent);

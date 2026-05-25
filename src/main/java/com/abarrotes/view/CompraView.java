@@ -53,7 +53,7 @@ public class CompraView extends JDialog {
     private ArrayList<Proveedor> proveedoresFiltrados = new ArrayList<>();
 
     public CompraView(JFrame parent) {
-        super(parent, "Compras - Abarrotes POS", true);
+        super(parent, "Compras - Abarrotes", true);
         setSize(1080, 660);
         setMinimumSize(new Dimension(980, 600));
         setLocationRelativeTo(parent);

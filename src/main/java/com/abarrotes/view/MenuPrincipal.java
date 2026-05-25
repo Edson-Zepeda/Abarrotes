@@ -48,7 +48,7 @@ public class MenuPrincipal extends JFrame {
     public MenuPrincipal(String rol) {
         this.rol = rol;
 
-        setTitle("Sistema de Abarrotes POS - Equipo 6");
+        setTitle("Sistema de Abarrotes - Equipo 6");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1100, 700);
         setMinimumSize(new Dimension(980, 620));
@@ -71,7 +71,7 @@ public class MenuPrincipal extends JFrame {
         panel.setBackground(AppTheme.ROJO);
         panel.setBorder(AppTheme.bordeVacio(14, 22, 14, 22));
 
-        JLabel titulo = new JLabel("Abarrotes POS");
+        JLabel titulo = new JLabel("Abarrotes");
         titulo.setFont(AppTheme.fuenteNegrita(24));
         titulo.setForeground(Color.WHITE);
 

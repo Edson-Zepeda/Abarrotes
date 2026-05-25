@@ -1,6 +1,6 @@
 # Checklist final del sistema
 
-Proyecto: Sistema de Abarrotes POS Mejorado - Equipo 6
+Proyecto: Sistema de Abarrotes Mejorado - Equipo 6
 
 Este checklist revisa solamente el programa o sistema solicitado para el escenario de Abarrotes. No evalua el reporte PDF ni la presentacion, salvo el ZIP del proyecto como entregable tecnico.
 
@@ -122,7 +122,7 @@ Este checklist revisa solamente el programa o sistema solicitado para el escenar
 - [x] Prueba de datos iniciales con 30 productos.
 - [x] Prueba de compra aumentando existencias.
 - [x] Prueba de SQLite JDBC para usuarios.
-- [x] ZIP final generado: `C:\Users\Lenovo\Downloads\abarrotes 2\Abarrotes_Equipo6_POS_Mejorado.zip`.
+- [x] ZIP final generado: `C:\Users\Lenovo\Downloads\abarrotes 2\Abarrotes_Eclipse_Editable.zip`.
 
 ## Resultado final
 

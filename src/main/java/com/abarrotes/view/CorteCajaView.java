@@ -26,7 +26,7 @@ public class CorteCajaView extends JDialog {
     private JLabel lblTotalVendido, lblNumVentas, lblPromedio, lblVacio;
 
     public CorteCajaView(JFrame parent) {
-        super(parent, "Corte de Caja - Abarrotes POS", true);
+        super(parent, "Corte de Caja - Abarrotes", true);
         setSize(980, 620);
         setMinimumSize(new Dimension(900, 560));
         setLocationRelativeTo(parent);

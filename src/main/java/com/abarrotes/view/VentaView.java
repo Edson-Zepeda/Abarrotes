@@ -73,7 +73,7 @@ public class VentaView extends JDialog {
     private ArrayList<DetalleVenta> carrito = new ArrayList<>();
 
     public VentaView(JFrame parent) {
-        super(parent, "Terminal de Ventas - Abarrotes POS", true);
+        super(parent, "Terminal de Ventas - Abarrotes", true);
         setSize(1180, 720);
         setMinimumSize(new Dimension(1060, 650));
         setLocationRelativeTo(parent);
