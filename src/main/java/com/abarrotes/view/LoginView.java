@@ -51,11 +51,6 @@ public class LoginView extends JFrame {
         panel.setBackground(AppTheme.ROJO);
         panel.setBorder(AppTheme.bordeVacio(34, 34, 34, 34));
 
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.weightx = 1;
-
         JLabel lblSistema = new JLabel("ABARROTES POS");
         lblSistema.setFont(AppTheme.fuenteNegrita(30));
         lblSistema.setForeground(Color.WHITE);
@@ -72,17 +67,10 @@ public class LoginView extends JFrame {
         franja.setBackground(AppTheme.AMARILLO);
         franja.setPreferredSize(new Dimension(0, 6));
 
-        gbc.gridy = 0;
-        gbc.insets = new Insets(0, 0, 8, 0);
-        panel.add(lblSistema, gbc);
-        gbc.gridy++;
-        panel.add(lblEquipo, gbc);
-        gbc.gridy++;
-        gbc.insets = new Insets(24, 0, 24, 0);
-        panel.add(franja, gbc);
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 0, 0);
-        panel.add(lblLinea, gbc);
+        panel.add(lblSistema, crearRestriccion(0, new Insets(0, 0, 8, 0)));
+        panel.add(lblEquipo, crearRestriccion(1, new Insets(0, 0, 8, 0)));
+        panel.add(franja, crearRestriccion(2, new Insets(24, 0, 24, 0)));
+        panel.add(lblLinea, crearRestriccion(3, new Insets(0, 0, 0, 0)));
 
         return panel;
     }
@@ -95,11 +83,6 @@ public class LoginView extends JFrame {
         JPanel form = new JPanel(new GridBagLayout());
         form.setBackground(AppTheme.SUPERFICIE);
         form.setBorder(AppTheme.bordeTarjeta());
-
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.weightx = 1;
 
         JLabel titulo = new JLabel("Iniciar sesion");
         titulo.setFont(AppTheme.fuenteNegrita(26));
@@ -121,36 +104,27 @@ public class LoginView extends JFrame {
         txtPassword.addActionListener(e -> validarAcceso());
         getRootPane().setDefaultButton(btnEntrar);
 
-        gbc.gridy = 0;
-        gbc.insets = new Insets(0, 0, 4, 0);
-        form.add(titulo, gbc);
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 26, 0);
-        form.add(subtitulo, gbc);
-
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 6, 0);
-        form.add(UiFactory.etiqueta("Usuario"), gbc);
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 18, 0);
-        form.add(txtUsuario, gbc);
-
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 6, 0);
-        form.add(UiFactory.etiqueta("Contrasena"), gbc);
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 8, 0);
-        form.add(txtPassword, gbc);
-
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 16, 0);
-        form.add(lblError, gbc);
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 0, 0);
-        form.add(btnEntrar, gbc);
+        form.add(titulo, crearRestriccion(0, new Insets(0, 0, 4, 0)));
+        form.add(subtitulo, crearRestriccion(1, new Insets(0, 0, 26, 0)));
+        form.add(UiFactory.etiqueta("Usuario"), crearRestriccion(2, new Insets(0, 0, 6, 0)));
+        form.add(txtUsuario, crearRestriccion(3, new Insets(0, 0, 18, 0)));
+        form.add(UiFactory.etiqueta("Contrasena"), crearRestriccion(4, new Insets(0, 0, 6, 0)));
+        form.add(txtPassword, crearRestriccion(5, new Insets(0, 0, 8, 0)));
+        form.add(lblError, crearRestriccion(6, new Insets(0, 0, 16, 0)));
+        form.add(btnEntrar, crearRestriccion(7, new Insets(0, 0, 0, 0)));
 
         exterior.add(form, new GridBagConstraints());
         return exterior;
+    }
+
+    private GridBagConstraints crearRestriccion(int fila, Insets margen) {
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = fila;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weightx = 1;
+        gbc.insets = margen;
+        return gbc;
     }
 
     // Logica para validar y dar accesos.
