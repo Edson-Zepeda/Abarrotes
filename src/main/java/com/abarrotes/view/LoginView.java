@@ -59,18 +59,13 @@ public class LoginView extends JFrame {
         lblEquipo.setFont(AppTheme.fuenteNormal(18));
         lblEquipo.setForeground(new Color(255, 238, 180));
 
-        JLabel lblLinea = new JLabel("Caja rapida, inventario y corte diario");
-        lblLinea.setFont(AppTheme.fuenteNormal(13));
-        lblLinea.setForeground(Color.WHITE);
-
         JPanel franja = new JPanel();
         franja.setBackground(AppTheme.AMARILLO);
         franja.setPreferredSize(new Dimension(0, 6));
 
         panel.add(lblSistema, crearRestriccion(0, new Insets(0, 0, 8, 0)));
         panel.add(lblEquipo, crearRestriccion(1, new Insets(0, 0, 8, 0)));
-        panel.add(franja, crearRestriccion(2, new Insets(24, 0, 24, 0)));
-        panel.add(lblLinea, crearRestriccion(3, new Insets(0, 0, 0, 0)));
+        panel.add(franja, crearRestriccion(2, new Insets(24, 0, 0, 0)));
 
         return panel;
     }
@@ -88,10 +83,6 @@ public class LoginView extends JFrame {
         titulo.setFont(AppTheme.fuenteNegrita(26));
         titulo.setForeground(AppTheme.TEXTO);
 
-        JLabel subtitulo = new JLabel("Ingresa tus credenciales para abrir el punto de venta.");
-        subtitulo.setFont(AppTheme.fuenteNormal(13));
-        subtitulo.setForeground(AppTheme.TEXTO_SUAVE);
-
         txtUsuario = UiFactory.campoTexto();
         txtPassword = UiFactory.campoPassword();
         lblError = new JLabel(" ");
@@ -105,13 +96,12 @@ public class LoginView extends JFrame {
         getRootPane().setDefaultButton(btnEntrar);
 
         form.add(titulo, crearRestriccion(0, new Insets(0, 0, 4, 0)));
-        form.add(subtitulo, crearRestriccion(1, new Insets(0, 0, 26, 0)));
-        form.add(UiFactory.etiqueta("Usuario"), crearRestriccion(2, new Insets(0, 0, 6, 0)));
-        form.add(txtUsuario, crearRestriccion(3, new Insets(0, 0, 18, 0)));
-        form.add(UiFactory.etiqueta("Contrasena"), crearRestriccion(4, new Insets(0, 0, 6, 0)));
-        form.add(txtPassword, crearRestriccion(5, new Insets(0, 0, 8, 0)));
-        form.add(lblError, crearRestriccion(6, new Insets(0, 0, 16, 0)));
-        form.add(btnEntrar, crearRestriccion(7, new Insets(0, 0, 0, 0)));
+        form.add(UiFactory.etiqueta("Usuario"), crearRestriccion(1, new Insets(18, 0, 6, 0)));
+        form.add(txtUsuario, crearRestriccion(2, new Insets(0, 0, 18, 0)));
+        form.add(UiFactory.etiqueta("Contrasena"), crearRestriccion(3, new Insets(0, 0, 6, 0)));
+        form.add(txtPassword, crearRestriccion(4, new Insets(0, 0, 8, 0)));
+        form.add(lblError, crearRestriccion(5, new Insets(0, 0, 16, 0)));
+        form.add(btnEntrar, crearRestriccion(6, new Insets(0, 0, 0, 0)));
 
         exterior.add(form, new GridBagConstraints());
         return exterior;

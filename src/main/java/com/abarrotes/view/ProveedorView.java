@@ -46,7 +46,7 @@ public class ProveedorView extends JDialog {
         setLocationRelativeTo(parent);
         setLayout(new BorderLayout());
 
-        add(UiFactory.encabezado("Proveedores", "Empresas y contactos de suministro"), BorderLayout.NORTH);
+        add(UiFactory.encabezado("Proveedores", ""), BorderLayout.NORTH);
         add(crearContenido(), BorderLayout.CENTER);
 
         actualizarTabla();

@@ -121,12 +121,6 @@ public class MenuPrincipal extends JFrame {
         botones.add(btnUsuarios);
         botones.add(btnCerrarSesion);
 
-        JLabel lblTurno = new JLabel("Punto de venta");
-        lblTurno.setFont(AppTheme.fuenteNegrita(18));
-        lblTurno.setForeground(Color.WHITE);
-        lblTurno.setBorder(AppTheme.bordeVacio(0, 4, 10, 4));
-
-        panel.add(lblTurno, BorderLayout.NORTH);
         panel.add(botones, BorderLayout.CENTER);
         return panel;
     }
@@ -137,11 +131,7 @@ public class MenuPrincipal extends JFrame {
         JPanel encabezado = new JPanel(new BorderLayout());
         encabezado.setBackground(AppTheme.FONDO);
         JLabel titulo = UiFactory.tituloPanel("Resumen de operacion");
-        JLabel subtitulo = new JLabel("Accesos rapidos y estado actual de la tienda.");
-        subtitulo.setFont(AppTheme.fuenteNormal(13));
-        subtitulo.setForeground(AppTheme.TEXTO_SUAVE);
-        encabezado.add(titulo, BorderLayout.NORTH);
-        encabezado.add(subtitulo, BorderLayout.SOUTH);
+        encabezado.add(titulo, BorderLayout.CENTER);
 
         JPanel tarjetas = new JPanel(new GridLayout(2, 4, 14, 14));
         tarjetas.setBackground(AppTheme.FONDO);
@@ -209,11 +199,11 @@ public class MenuPrincipal extends JFrame {
         boton.setFocusPainted(false);
         boton.setCursor(new Cursor(Cursor.HAND_CURSOR));
         boton.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(destacado ? AppTheme.AMARILLO : AppTheme.ROJO_OSCURO),
+                BorderFactory.createLineBorder(destacado ? AppTheme.ROJO : AppTheme.ROJO_OSCURO),
                 AppTheme.bordeVacio(12, 14, 12, 14)
         ));
-        boton.setBackground(destacado ? AppTheme.AMARILLO : AppTheme.ROJO_OSCURO);
-        boton.setForeground(destacado ? AppTheme.TEXTO : Color.WHITE);
+        boton.setBackground(destacado ? AppTheme.ROJO : AppTheme.ROJO_OSCURO);
+        boton.setForeground(Color.WHITE);
         return boton;
     }
 

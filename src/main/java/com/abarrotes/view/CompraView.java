@@ -59,7 +59,7 @@ public class CompraView extends JDialog {
         setLocationRelativeTo(parent);
         setLayout(new BorderLayout());
 
-        add(UiFactory.encabezado("Compras", "Entradas de mercancia y aumento de existencias"), BorderLayout.NORTH);
+        add(UiFactory.encabezado("Compras", ""), BorderLayout.NORTH);
         add(crearContenido(), BorderLayout.CENTER);
 
         actualizarProductos();

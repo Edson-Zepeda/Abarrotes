@@ -32,7 +32,7 @@ public class CorteCajaView extends JDialog {
         setLocationRelativeTo(parent);
         setLayout(new BorderLayout());
 
-        add(UiFactory.encabezado("Corte de caja", "Resumen de ventas del dia"), BorderLayout.NORTH);
+        add(UiFactory.encabezado("Corte de caja", ""), BorderLayout.NORTH);
         add(crearContenido(), BorderLayout.CENTER);
 
         calcularCorte();

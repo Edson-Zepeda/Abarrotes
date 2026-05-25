@@ -50,7 +50,7 @@ public class InventarioView extends JDialog {
         setLocationRelativeTo(parent);
         setLayout(new BorderLayout());
 
-        add(UiFactory.encabezado("Inventario", "Productos, precios y existencias"), BorderLayout.NORTH);
+        add(UiFactory.encabezado("Inventario", ""), BorderLayout.NORTH);
         add(crearContenido(), BorderLayout.CENTER);
 
         actualizarTabla();

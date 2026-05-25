@@ -80,7 +80,7 @@ public class VentaView extends JDialog {
         setLayout(new BorderLayout());
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
-        add(UiFactory.encabezado("Terminal de ventas", "Busqueda rapida, carrito y cobro"), BorderLayout.NORTH);
+        add(UiFactory.encabezado("Terminal de ventas", ""), BorderLayout.NORTH);
         add(crearContenido(), BorderLayout.CENTER);
 
         addWindowListener(new WindowAdapter() {
@@ -117,7 +117,6 @@ public class VentaView extends JDialog {
 
         JLabel titulo = UiFactory.tituloPanel("Productos disponibles");
         txtBuscarProducto = UiFactory.campoTexto();
-        txtBuscarProducto.setToolTipText("F2 para buscar producto");
         superior.add(titulo, BorderLayout.NORTH);
         superior.add(txtBuscarProducto, BorderLayout.CENTER);
 
@@ -195,7 +194,7 @@ public class VentaView extends JDialog {
         acciones.add(btnVaciar);
         acciones.add(btnRegresar);
 
-        lblEstado = new JLabel("F2 buscar producto | Enter agregar | F12 cobrar | Esc regresar");
+        lblEstado = new JLabel(" ");
         lblEstado.setFont(AppTheme.fuenteNegrita(12));
         lblEstado.setForeground(AppTheme.TEXTO_SUAVE);
 

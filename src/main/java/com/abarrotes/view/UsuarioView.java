@@ -51,7 +51,7 @@ public class UsuarioView extends JDialog {
         setLocationRelativeTo(parent);
         setLayout(new BorderLayout());
 
-        add(UiFactory.encabezado("Usuarios", "Control de acceso con SQLite"), BorderLayout.NORTH);
+        add(UiFactory.encabezado("Usuarios", ""), BorderLayout.NORTH);
         add(crearContenido(), BorderLayout.CENTER);
 
         actualizarTabla();

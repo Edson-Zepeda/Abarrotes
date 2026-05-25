@@ -39,14 +39,15 @@ public class UiFactory {
         lblTitulo.setFont(AppTheme.fuenteNegrita(22));
         lblTitulo.setForeground(Color.WHITE);
 
-        JLabel lblSubtitulo = new JLabel(subtitulo);
-        lblSubtitulo.setFont(AppTheme.fuenteNormal(12));
-        lblSubtitulo.setForeground(new Color(255, 237, 170));
-
         JPanel textos = new JPanel(new BorderLayout(0, 3));
         textos.setOpaque(false);
-        textos.add(lblTitulo, BorderLayout.NORTH);
-        textos.add(lblSubtitulo, BorderLayout.SOUTH);
+        textos.add(lblTitulo, BorderLayout.CENTER);
+        if (subtitulo != null && !subtitulo.trim().isEmpty()) {
+            JLabel lblSubtitulo = new JLabel(subtitulo);
+            lblSubtitulo.setFont(AppTheme.fuenteNormal(12));
+            lblSubtitulo.setForeground(new Color(255, 237, 170));
+            textos.add(lblSubtitulo, BorderLayout.SOUTH);
+        }
 
         JPanel franja = new JPanel();
         franja.setBackground(AppTheme.AMARILLO);
@@ -92,15 +93,15 @@ public class UiFactory {
     }
 
     public static JButton botonPrimario(String texto) {
-        return boton(texto, AppTheme.ROJO, Color.WHITE);
+        return boton(texto, AppTheme.ROJO_OSCURO, Color.WHITE);
     }
 
     public static JButton botonExito(String texto) {
-        return boton(texto, AppTheme.VERDE, Color.WHITE);
+        return boton(texto, AppTheme.ROJO_OSCURO, Color.WHITE);
     }
 
     public static JButton botonSecundario(String texto) {
-        return boton(texto, new Color(74, 85, 104), Color.WHITE);
+        return boton(texto, AppTheme.ROJO_OSCURO, Color.WHITE);
     }
 
     public static JButton botonPeligro(String texto) {
@@ -108,7 +109,7 @@ public class UiFactory {
     }
 
     public static JButton botonClaro(String texto) {
-        JButton boton = boton(texto, AppTheme.SUPERFICIE, AppTheme.TEXTO);
+        JButton boton = boton(texto, AppTheme.FONDO, AppTheme.TEXTO);
         boton.setBorder(BorderFactory.createLineBorder(AppTheme.BORDE));
         return boton;
     }

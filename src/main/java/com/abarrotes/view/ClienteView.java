@@ -46,7 +46,7 @@ public class ClienteView extends JDialog {
         setLocationRelativeTo(parent);
         setLayout(new BorderLayout());
 
-        add(UiFactory.encabezado("Clientes", "Directorio para ventas y seguimiento"), BorderLayout.NORTH);
+        add(UiFactory.encabezado("Clientes", ""), BorderLayout.NORTH);
         add(crearContenido(), BorderLayout.CENTER);
 
         actualizarTabla();
