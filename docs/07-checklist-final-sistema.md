@@ -1,115 +1,123 @@
-# Checklist final del sistema
+# Checklist final de entrega
 
 Proyecto: Sistema de Abarrotes Mejorado - Equipo 6
 
-Este checklist revisa solamente el programa o sistema solicitado para el escenario de Abarrotes. No evalua el reporte PDF ni la presentacion, salvo el ZIP del proyecto como entregable tecnico.
+Este checklist resume el estado final del sistema despues de los ajustes solicitados. Sirve como revision previa para entregar el ZIP, importar en Eclipse y hacer la demostracion.
 
-## Requisitos del proyecto para Equipo 6
+## Entrega principal
 
-- [x] Sistema desarrollado en Java.
-- [x] Interfaz grafica en Java Swing.
-- [x] Inventario implementado.
-- [x] Clientes implementado.
-- [x] Proveedores implementado.
-- [x] Ventas implementado.
-- [x] Corte de caja implementado.
-- [x] Catalogo de usuarios implementado.
-- [x] Busquedas disponibles en modulos principales.
-- [x] 30 productos cargados previamente al sistema.
-- [x] Programa validado en entradas principales.
-- [x] Programa compilando correctamente.
-- [x] Proyecto completo comprimido en archivo ZIP.
+- [x] Proyecto final separado de las versiones anteriores.
+- [x] Carpeta principal importable con nombre `Abarrotes`.
+- [x] ZIP final generado en `C:\Users\Lenovo\Downloads\abarrotes 2\Abarrotes_Eclipse_Final.zip`.
+- [x] ZIP con archivo `.project` para Eclipse.
+- [x] ZIP con archivo `.classpath` para Eclipse.
+- [x] ZIP con librerias necesarias en `lib`.
+- [x] ZIP sin `.class`, base de datos generada, carpetas de compilacion ni basura de IDE.
+- [x] Repositorio de GitHub actualizado en la rama de trabajo.
 
-## Modulos del sistema
+## Alcance final del sistema
 
-- [x] Login con usuarios reales en SQLite JDBC.
-  - Usuario administrador: `admin / 1234`.
-  - Usuario empleado: `empleado / 1234`.
-  - Credenciales incorrectas son rechazadas.
-
+- [x] Login.
 - [x] Menu principal.
-  - Navegacion lateral clara.
-  - Boton para cerrar sesion.
-  - Dashboard con productos, clientes, proveedores, ventas y existencias bajas.
-  - Acceso a usuarios reservado para rol Administrador.
-
 - [x] Inventario.
-  - Alta de productos.
-  - Modificacion de productos.
-  - Eliminacion de productos.
-  - Busqueda por producto, precio o existencias.
-  - Validacion de campos vacios.
-  - Validacion de precio y existencias numericas.
-  - Validacion contra valores negativos.
-  - Validacion contra productos duplicados.
-
 - [x] Clientes.
-  - Alta de clientes.
-  - Modificacion de clientes.
-  - Eliminacion de clientes.
-  - Busqueda por numero de cliente, nombre o telefono.
-  - Validacion de campos vacios.
-  - Validacion contra numero de cliente duplicado.
-
 - [x] Proveedores.
-  - Alta de proveedores.
-  - Modificacion de proveedores.
-  - Eliminacion de proveedores.
-  - Busqueda por empresa, vendedor o telefono.
-  - Validacion de campos vacios.
-  - Validacion contra empresa duplicada.
-
 - [x] Ventas.
-  - Busqueda de productos sin depender de listas desplegables.
-  - Carrito de venta.
-  - Aumento y disminucion de cantidades.
-  - Eliminacion de productos del carrito.
-  - Vaciado de carrito.
-  - Validacion de existencias suficientes.
-  - Calculo de subtotal y total.
-  - Captura de efectivo recibido.
-  - Calculo de cambio.
-  - Registro de venta terminada.
-  - Descuento automatico de existencias al cobrar.
-  - Registro de venta para corte de caja.
-
 - [x] Corte de caja.
-  - Total vendido.
-  - Numero de operaciones.
-  - Ticket promedio.
-  - Historial de ventas del dia.
-  - Estado claro cuando no hay ventas.
-
 - [x] Usuarios.
-  - Alta de usuarios en SQLite.
-  - Modificacion de usuarios en SQLite.
-  - Eliminacion de usuarios en SQLite.
-  - Busqueda por usuario o rol.
-  - Validacion de campos vacios.
-  - Validacion contra usuarios duplicados.
-  - Proteccion para que siempre exista al menos un administrador.
+- [x] Dashboard principal.
+- [x] Datos iniciales con 30 productos.
+- [x] Catalogo retirado por solicitud final eliminado del menu, codigo y documentacion.
 
-## Criterios de evaluacion del instrumento
+## Base de datos y acceso
 
-- [x] Funcionalidad: los flujos principales compilan y funcionan.
-- [x] Programa: existe ejecucion por scripts `compile.ps1` y `run.ps1`.
-- [x] Ortografia y textos: etiquetas visibles revisadas para que sean claras y breves.
-- [x] Facilidad de uso: menu lateral, botones de regreso, cerrar sesion, busquedas y formularios ordenados.
-- [x] Diseno grafico: interfaz redisenada tipo punto de venta, con estilo consistente.
-- [x] Utilidad: el sistema cubre venta, inventario, clientes, proveedores, usuarios y corte.
-- [x] Requerimientos del cliente: los modulos activos del escenario Abarrotes estan cubiertos.
+- [x] SQLite JDBC integrado.
+- [x] Base de datos local creada en `data/abarrotes.db` al ejecutar.
+- [x] Login valida usuarios reales desde SQLite.
+- [x] Credenciales iniciales disponibles.
+- [x] Administrador: `admin / 1234`.
+- [x] Empleado: `empleado / 1234`.
+- [x] Credenciales incorrectas muestran error sin cerrar el sistema.
+- [x] Usuarios se pueden crear, modificar, eliminar y buscar.
+- [x] Se protege que siempre exista al menos un administrador.
 
-## Verificacion realizada
+## Interfaz y experiencia
+
+- [x] Rediseño visual mas profesional.
+- [x] Estilo consistente en ventanas principales.
+- [x] Menu lateral para navegar entre secciones.
+- [x] Boton `Cerrar sesion` en el menu principal.
+- [x] Botones de regreso al menu en las secciones.
+- [x] Textos visibles revisados para ser claros y breves.
+- [x] Se retiro la palabra tecnica innecesaria de las pantallas.
+- [x] Se quitaron textos descriptivos sobrantes.
+- [x] El boton `Usuarios` conserva su nombre aunque el rol empleado no pueda abrirlo.
+- [x] Login editable desde la pestaña `Design` de Eclipse.
+- [x] Login sin `GridBagLayout`, sin `UiFactory`, sin `AppTheme` y sin metodo auxiliar de restricciones.
+- [x] Componentes del login declarados directamente para poder moverlos en WindowBuilder.
+
+## Funcionamiento por modulo
+
+- [x] Inventario permite agregar productos.
+- [x] Inventario permite modificar productos.
+- [x] Inventario permite eliminar productos.
+- [x] Inventario permite buscar por producto, precio o existencias.
+- [x] Inventario valida campos vacios.
+- [x] Inventario valida precio y existencias numericas.
+- [x] Inventario evita valores negativos.
+- [x] Inventario evita productos duplicados.
+
+- [x] Clientes permite agregar registros.
+- [x] Clientes permite modificar registros.
+- [x] Clientes permite eliminar registros.
+- [x] Clientes permite buscar por numero, nombre o telefono.
+- [x] Clientes valida campos vacios.
+- [x] Clientes evita numero duplicado.
+
+- [x] Proveedores permite agregar registros.
+- [x] Proveedores permite modificar registros.
+- [x] Proveedores permite eliminar registros.
+- [x] Proveedores permite buscar por empresa, vendedor o telefono.
+- [x] Proveedores valida campos vacios.
+- [x] Proveedores evita empresa duplicada.
+
+- [x] Ventas usa buscador y tabla de productos.
+- [x] Ventas no depende de listas desplegables para elegir producto.
+- [x] Ventas permite agregar productos al carrito.
+- [x] Ventas permite aumentar cantidades.
+- [x] Ventas permite disminuir cantidades.
+- [x] Ventas permite quitar productos del carrito.
+- [x] Ventas permite vaciar carrito.
+- [x] Ventas valida existencias suficientes.
+- [x] Ventas calcula total.
+- [x] Ventas captura efectivo recibido.
+- [x] Ventas calcula cambio.
+- [x] Ventas descuenta existencias al cobrar.
+- [x] Ventas registra operaciones para corte de caja.
+
+- [x] Corte de caja muestra total vendido.
+- [x] Corte de caja muestra numero de operaciones.
+- [x] Corte de caja muestra ticket promedio.
+- [x] Corte de caja muestra historial de ventas.
+- [x] Corte de caja muestra estado claro cuando no hay ventas.
+
+## Limpieza del proyecto
+
+- [x] Estructura final clara: `data`, `docs`, `lib`, `scripts`, `src`.
+- [x] `README.md` actualizado.
+- [x] Documentacion actualizada al alcance final.
+- [x] Librerias externas conservadas solo en `lib`.
+- [x] Archivos generados excluidos del ZIP.
+- [x] Archivos innecesarios eliminados de la entrega.
+- [x] Nombre final del sistema: `Abarrotes`.
+
+## Verificacion final
 
 - [x] Compilacion ejecutada con `.\scripts\compile.ps1`.
-- [x] Clases actualizadas en carpeta `out`.
-- [x] Clases actualizadas en carpeta `bin`.
-- [x] Prueba de login con `admin / 1234`.
-- [x] Prueba de datos iniciales con 30 productos.
-- [x] Prueba de SQLite JDBC para usuarios.
-- [x] ZIP final generado: `C:\Users\Lenovo\Downloads\abarrotes 2\Abarrotes_Eclipse_Final.zip`.
-
-## Resultado final
-
-- [x] El sistema queda listo para entrega como programa del proyecto final de Abarrotes.
-- [x] No se detectan pendientes criticos del programa respecto a los requisitos del PDF.
+- [x] Proyecto extraido desde el ZIP compila correctamente.
+- [x] No quedan referencias al texto retirado de la marca anterior.
+- [x] No quedan referencias al modulo retirado.
+- [x] No queda el texto de acceso restringido que se pidio quitar.
+- [x] Login listo para abrir y editar en Eclipse WindowBuilder.
+- [x] Proyecto listo para importar en Eclipse como `Abarrotes`.
+- [x] Proyecto listo para entrega.
