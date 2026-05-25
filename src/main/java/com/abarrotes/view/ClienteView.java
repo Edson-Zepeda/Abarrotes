@@ -27,7 +27,7 @@ import com.abarrotes.view.ui.UiFactory;
 
 /**
  * Esta ventana es el "Directorio de Clientes".
- * Sirve para anotar quienes nos compran, modificar sus datos o borrarlos.
+ * Sirve para anotar clientes frecuentes, modificar sus datos o borrarlos.
  */
 
 public class ClienteView extends JDialog {

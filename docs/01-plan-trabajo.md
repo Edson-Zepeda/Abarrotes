@@ -35,13 +35,12 @@ Entregable interno: programa ejecutable con catalogos principales.
 
 ## Fase 3: Operaciones del negocio, dias 13 al 19
 
-- Implementar compras.
 - Implementar ventas.
-- Descontar/agregar inventario segun operacion.
+- Descontar inventario segun venta.
 - Implementar corte de caja.
 - Agregar validaciones fuertes.
 
-Entregable interno: flujo completo compra -> inventario -> venta -> corte.
+Entregable interno: flujo completo inventario -> venta -> corte.
 
 ## Fase 4: Pulido, dias 20 al 24
 

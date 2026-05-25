@@ -11,7 +11,7 @@
 
 ## 1. Introduccion
 
-Explicar que el sistema resuelve la administracion basica de un abarrotes: productos, clientes, proveedores, compras, ventas, corte de caja y usuarios.
+Explicar que el sistema resuelve la administracion basica de un abarrotes: productos, clientes, proveedores, ventas, corte de caja y usuarios.
 
 ## 2. Analisis del problema
 
@@ -19,7 +19,7 @@ Describir los problemas comunes:
 
 - Control manual de inventario.
 - Errores al registrar ventas.
-- Falta de control sobre compras y proveedores.
+- Falta de control sobre proveedores.
 - Dificultad para conocer ingresos del dia.
 
 ## 3. Detalles del proceso de programacion
@@ -40,7 +40,6 @@ Documentar cada modulo:
 - Inventario.
 - Clientes.
 - Proveedores.
-- Compras.
 - Ventas.
 - Corte de caja.
 - Usuarios.

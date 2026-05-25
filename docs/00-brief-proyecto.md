@@ -6,18 +6,17 @@ Equipo 6: Abarrotes.
 
 ## Problema
 
-Un negocio de abarrotes necesita controlar productos, existencias, proveedores, clientes, compras, ventas y corte de caja. El sistema debe permitir consultar y registrar operaciones de forma clara, validada y util para una demostracion en clase.
+Un negocio de abarrotes necesita controlar productos, existencias, proveedores, clientes, ventas y corte de caja. El sistema debe permitir consultar y registrar operaciones de forma clara, validada y util para una demostracion en clase.
 
 ## Alcance minimo obligatorio
 
 1. Inventario.
 2. Clientes.
 3. Proveedores.
-4. Compras.
-5. Ventas.
-6. Corte de caja.
-7. Catalogo de usuarios.
-8. 30 registros cargados antes de la entrega.
+4. Ventas.
+5. Corte de caja.
+6. Catalogo de usuarios.
+7. 30 registros cargados antes de la entrega.
 
 ## Criterios de exito
 

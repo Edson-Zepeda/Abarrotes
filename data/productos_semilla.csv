@@ -1,4 +1,4 @@
-codigo,nombre,categoria,precio_compra,precio_venta,existencia
+codigo,nombre,categoria,costo,precio_venta,existencia
 P001,Arroz 1 kg,Despensa,24.00,32.00,20
 P002,Frijol 1 kg,Despensa,28.00,38.00,18
 P003,Azucar 1 kg,Despensa,23.00,31.00,25

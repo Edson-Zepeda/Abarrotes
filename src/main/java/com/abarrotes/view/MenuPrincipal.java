@@ -13,7 +13,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import com.abarrotes.app.Main;
-import com.abarrotes.model.Compra;
 import com.abarrotes.model.Producto;
 import com.abarrotes.model.Venta;
 import com.abarrotes.view.ui.AppTheme;
@@ -33,14 +32,11 @@ public class MenuPrincipal extends JFrame {
     private JLabel lblOperaciones;
     private JLabel lblTotalVendido;
     private JLabel lblStockBajo;
-    private JLabel lblCompras;
-    private JLabel lblTotalComprado;
 
     private JButton btnVentas;
     private JButton btnInventario;
     private JButton btnClientes;
     private JButton btnProveedores;
-    private JButton btnCompras;
     private JButton btnUsuarios;
     private JButton btnCorte;
     private JButton btnCerrarSesion;
@@ -91,14 +87,13 @@ public class MenuPrincipal extends JFrame {
         panel.setBackground(AppTheme.ROJO_OSCURO);
         panel.setBorder(AppTheme.bordeVacio(18, 14, 18, 14));
 
-        JPanel botones = new JPanel(new GridLayout(8, 1, 0, 10));
+        JPanel botones = new JPanel(new GridLayout(7, 1, 0, 10));
         botones.setOpaque(false);
 
         btnVentas = crearBotonNavegacion("Ventas", true);
         btnInventario = crearBotonNavegacion("Inventario", false);
         btnClientes = crearBotonNavegacion("Clientes", false);
         btnProveedores = crearBotonNavegacion("Proveedores", false);
-        btnCompras = crearBotonNavegacion("Compras", false);
         btnCorte = crearBotonNavegacion("Corte de caja", false);
         btnUsuarios = crearBotonNavegacion("Usuarios", false);
         btnCerrarSesion = crearBotonNavegacion("Cerrar sesion", false);
@@ -107,7 +102,6 @@ public class MenuPrincipal extends JFrame {
         btnInventario.addActionListener(e -> abrirInventario());
         btnClientes.addActionListener(e -> abrirClientes());
         btnProveedores.addActionListener(e -> abrirProveedores());
-        btnCompras.addActionListener(e -> abrirCompras());
         btnCorte.addActionListener(e -> abrirCorte());
         btnUsuarios.addActionListener(e -> abrirUsuarios());
         btnCerrarSesion.addActionListener(e -> cerrarSesion());
@@ -116,7 +110,6 @@ public class MenuPrincipal extends JFrame {
         botones.add(btnInventario);
         botones.add(btnClientes);
         botones.add(btnProveedores);
-        botones.add(btnCompras);
         botones.add(btnCorte);
         botones.add(btnUsuarios);
         botones.add(btnCerrarSesion);
@@ -133,7 +126,7 @@ public class MenuPrincipal extends JFrame {
         JLabel titulo = UiFactory.tituloPanel("Resumen de operacion");
         encabezado.add(titulo, BorderLayout.CENTER);
 
-        JPanel tarjetas = new JPanel(new GridLayout(2, 4, 14, 14));
+        JPanel tarjetas = new JPanel(new GridLayout(2, 3, 14, 14));
         tarjetas.setBackground(AppTheme.FONDO);
 
         lblProductos = new JLabel("0");
@@ -142,16 +135,12 @@ public class MenuPrincipal extends JFrame {
         lblOperaciones = new JLabel("0");
         lblTotalVendido = new JLabel("$0.00");
         lblStockBajo = new JLabel("0");
-        lblCompras = new JLabel("0");
-        lblTotalComprado = new JLabel("$0.00");
 
         tarjetas.add(crearTarjeta("Productos activos", lblProductos, AppTheme.ROJO));
         tarjetas.add(crearTarjeta("Clientes", lblClientes, AppTheme.TEXTO));
         tarjetas.add(crearTarjeta("Proveedores", lblProveedores, AppTheme.TEXTO));
         tarjetas.add(crearTarjeta("Ventas del dia", lblOperaciones, AppTheme.VERDE));
         tarjetas.add(crearTarjeta("Total vendido", lblTotalVendido, AppTheme.VERDE));
-        tarjetas.add(crearTarjeta("Compras del dia", lblCompras, AppTheme.ROJO));
-        tarjetas.add(crearTarjeta("Total comprado", lblTotalComprado, AppTheme.ROJO));
         tarjetas.add(crearTarjeta("Existencias bajas", lblStockBajo, AppTheme.PELIGRO));
 
         JPanel acciones = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 0));
@@ -159,13 +148,10 @@ public class MenuPrincipal extends JFrame {
         JButton btnNuevaVenta = UiFactory.botonPrimario("Nueva venta");
         JButton btnVerCorte = UiFactory.botonSecundario("Ver corte");
         JButton btnVerInventario = UiFactory.botonClaro("Revisar inventario");
-        JButton btnNuevaCompra = UiFactory.botonClaro("Registrar compra");
         btnNuevaVenta.addActionListener(e -> abrirVentas());
         btnVerCorte.addActionListener(e -> abrirCorte());
         btnVerInventario.addActionListener(e -> abrirInventario());
-        btnNuevaCompra.addActionListener(e -> abrirCompras());
         acciones.add(btnNuevaVenta);
-        acciones.add(btnNuevaCompra);
         acciones.add(btnVerCorte);
         acciones.add(btnVerInventario);
 
@@ -227,11 +213,6 @@ public class MenuPrincipal extends JFrame {
         actualizarDashboard();
     }
 
-    private void abrirCompras() {
-        new CompraView(this).setVisible(true);
-        actualizarDashboard();
-    }
-
     private void abrirUsuarios() {
         if (btnUsuarios.isEnabled()) {
             new UsuarioView(this).setVisible(true);
@@ -255,8 +236,8 @@ public class MenuPrincipal extends JFrame {
     private void aplicarSeguridadRol() {
         if ("Empleado".equalsIgnoreCase(rol)) {
             btnUsuarios.setEnabled(false);
-            btnUsuarios.setText("Usuarios bloqueados");
-            btnUsuarios.setToolTipText("Solo administrador");
+            btnUsuarios.setText("Usuarios");
+            btnUsuarios.setToolTipText("Disponible para administrador");
         }
     }
 
@@ -266,8 +247,6 @@ public class MenuPrincipal extends JFrame {
         lblProveedores.setText(String.valueOf(Main.listaProveedores.size()));
         lblOperaciones.setText(String.valueOf(Main.ventasDelDia.size()));
         lblTotalVendido.setText(AppTheme.moneda(totalVendido()));
-        lblCompras.setText(String.valueOf(Main.comprasDelDia.size()));
-        lblTotalComprado.setText(AppTheme.moneda(totalComprado()));
         lblStockBajo.setText(String.valueOf(productosStockBajo()));
     }
 
@@ -275,14 +254,6 @@ public class MenuPrincipal extends JFrame {
         double total = 0;
         for (Venta venta : Main.ventasDelDia) {
             total += venta.getTotal();
-        }
-        return total;
-    }
-
-    private double totalComprado() {
-        double total = 0;
-        for (Compra compra : Main.comprasDelDia) {
-            total += compra.getTotal();
         }
         return total;
     }

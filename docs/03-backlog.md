@@ -7,7 +7,6 @@
 - Crear inventario de productos.
 - Registrar clientes.
 - Registrar proveedores.
-- Registrar compras.
 - Registrar ventas.
 - Calcular corte de caja.
 - Cargar 30 registros iniciales.
@@ -16,7 +15,6 @@
 ## Prioridad media
 
 - Busqueda de productos por nombre o codigo.
-- Historial de compras.
 - Historial de ventas.
 - Resumen de productos con bajo inventario.
 - Confirmacion antes de operaciones importantes.

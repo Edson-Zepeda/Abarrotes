@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import com.abarrotes.model.Cliente;
-import com.abarrotes.model.Compra;
 import com.abarrotes.model.Producto;
 import com.abarrotes.model.Proveedor;
 import com.abarrotes.model.Usuario;
@@ -35,9 +34,6 @@ public class Main {
     // Array para guardar las ventas terminadas y poder hacer corte de caja
     public static ArrayList<Venta> ventasDelDia = new ArrayList<>();
 
-    // Array para registrar compras hechas a proveedores y entradas de inventario.
-    public static ArrayList<Compra> comprasDelDia = new ArrayList<>();
-
     public static void main(String[] args) {
         // Preparamos SQLite antes de abrir el login.
         BaseDatos.inicializarBaseDatos();
@@ -61,7 +57,7 @@ public class Main {
     }
 
     private static void cargarDatosPrueba() {
-        // Registro de clientes que han comprado en el abarrotes
+        // Registro de clientes del abarrotes
         listaClientes.add(new Cliente("C001", "Publico General", "000-0000"));
         listaClientes.add(new Cliente("C002", "Juan Perez", "555-0123"));
 

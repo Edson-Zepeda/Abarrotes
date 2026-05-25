@@ -37,9 +37,8 @@ Rashid y Dario deben tener intervenciones mas cortas, muy ensayadas y con frases
 2. Mostrar usuarios.
 3. Mostrar inventario con productos cargados.
 4. Registrar proveedor o cliente.
-5. Registrar compra y verificar aumento de inventario.
-6. Registrar venta y verificar descuento de inventario.
-7. Mostrar corte de caja.
+5. Registrar venta y verificar descuento de inventario.
+6. Mostrar corte de caja.
 
 ## Preguntas probables
 

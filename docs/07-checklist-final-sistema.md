@@ -11,7 +11,6 @@ Este checklist revisa solamente el programa o sistema solicitado para el escenar
 - [x] Inventario implementado.
 - [x] Clientes implementado.
 - [x] Proveedores implementado.
-- [x] Compras implementado.
 - [x] Ventas implementado.
 - [x] Corte de caja implementado.
 - [x] Catalogo de usuarios implementado.
@@ -31,8 +30,8 @@ Este checklist revisa solamente el programa o sistema solicitado para el escenar
 - [x] Menu principal.
   - Navegacion lateral clara.
   - Boton para cerrar sesion.
-  - Dashboard con productos, clientes, proveedores, ventas, compras y existencias bajas.
-  - Acceso a usuarios bloqueado para rol Empleado.
+  - Dashboard con productos, clientes, proveedores, ventas y existencias bajas.
+  - Acceso a usuarios reservado para rol Administrador.
 
 - [x] Inventario.
   - Alta de productos.
@@ -59,19 +58,6 @@ Este checklist revisa solamente el programa o sistema solicitado para el escenar
   - Busqueda por empresa, vendedor o telefono.
   - Validacion de campos vacios.
   - Validacion contra empresa duplicada.
-
-- [x] Compras.
-  - Busqueda de producto a comprar.
-  - Seleccion de proveedor.
-  - Captura de cantidad comprada.
-  - Captura de costo de compra.
-  - Calculo de total de compra.
-  - Registro de compra en historial.
-  - Aumento automatico de existencias al registrar la compra.
-  - Validacion de producto seleccionado.
-  - Validacion de proveedor seleccionado.
-  - Validacion de costo numerico.
-  - Validacion contra costo negativo.
 
 - [x] Ventas.
   - Busqueda de productos sin depender de listas desplegables.
@@ -110,8 +96,8 @@ Este checklist revisa solamente el programa o sistema solicitado para el escenar
 - [x] Ortografia y textos: etiquetas visibles revisadas para que sean claras y breves.
 - [x] Facilidad de uso: menu lateral, botones de regreso, cerrar sesion, busquedas y formularios ordenados.
 - [x] Diseno grafico: interfaz redisenada tipo punto de venta, con estilo consistente.
-- [x] Utilidad: el sistema cubre venta, compra, inventario, clientes, proveedores, usuarios y corte.
-- [x] Requerimientos del cliente: todos los modulos del escenario Abarrotes estan cubiertos.
+- [x] Utilidad: el sistema cubre venta, inventario, clientes, proveedores, usuarios y corte.
+- [x] Requerimientos del cliente: los modulos activos del escenario Abarrotes estan cubiertos.
 
 ## Verificacion realizada
 
@@ -120,9 +106,8 @@ Este checklist revisa solamente el programa o sistema solicitado para el escenar
 - [x] Clases actualizadas en carpeta `bin`.
 - [x] Prueba de login con `admin / 1234`.
 - [x] Prueba de datos iniciales con 30 productos.
-- [x] Prueba de compra aumentando existencias.
 - [x] Prueba de SQLite JDBC para usuarios.
-- [x] ZIP final generado: `C:\Users\Lenovo\Downloads\abarrotes 2\Abarrotes_Eclipse_Editable.zip`.
+- [x] ZIP final generado: `C:\Users\Lenovo\Downloads\abarrotes 2\Abarrotes_Eclipse_Final.zip`.
 
 ## Resultado final
 

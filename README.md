@@ -2,9 +2,9 @@
 
 Proyecto final de Programacion IV para el escenario **Abarrotes**.
 
-El objetivo es construir un sistema en Java Swing que permita administrar inventario, clientes, proveedores, compras, ventas, corte de caja y usuarios del sistema, con datos iniciales suficientes para una demostracion completa.
+El objetivo es construir un sistema en Java Swing que permita administrar inventario, clientes, proveedores, ventas, corte de caja y usuarios del sistema, con datos iniciales suficientes para una demostracion completa.
 
-Esta version es una copia mejorada con interfaz tipo punto de venta: login redisenado, menu lateral, dashboard, compras con entrada de mercancia, ventas con buscador de productos, carrito de cobro, tablas no editables y catalogos con formulario lateral.
+Esta version es una copia mejorada con interfaz tipo punto de venta: login redisenado, menu lateral, dashboard, ventas con buscador de productos, carrito de cobro, tablas no editables y catalogos con formulario lateral.
 
 ## Entregables
 
@@ -18,7 +18,6 @@ Esta version es una copia mejorada con interfaz tipo punto de venta: login redis
 - Inventario.
 - Clientes.
 - Proveedores.
-- Compras.
 - Ventas.
 - Corte de caja.
 - Catalogo de usuarios que utilizan el sistema.
