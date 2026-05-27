@@ -53,7 +53,8 @@ Este checklist resume el estado final del sistema despues de los ajustes solicit
 - [x] Se quitaron textos descriptivos sobrantes.
 - [x] Paneles de trabajo en blanco para mejor lectura.
 - [x] Encabezados, barras laterales, bordes y tablas con rojo institucional.
-- [x] Texto blanco sobre fondos rojos.
+- [x] Texto blanco sobre encabezados principales rojos.
+- [x] Encabezados de tablas con texto negro.
 - [x] Botones y barra de busqueda con fondo blanco y texto negro.
 - [x] Rol del usuario mostrado sin texto sobrante.
 - [x] Ventanas ampliadas moderadamente para evitar botones cortados.

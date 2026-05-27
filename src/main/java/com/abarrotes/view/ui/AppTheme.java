@@ -48,6 +48,8 @@ public class AppTheme {
         UIManager.put("PasswordField.font", fuenteNormal(13));
         UIManager.put("ComboBox.font", fuenteNormal(13));
         UIManager.put("Table.font", fuenteNormal(13));
+        UIManager.put("TableHeader.foreground", TEXTO);
+        UIManager.put("TableHeader.font", fuenteNegrita(12));
         UIManager.put("OptionPane.messageFont", fuenteNormal(13));
         UIManager.put("OptionPane.buttonFont", fuenteNegrita(12));
     }
@@ -93,7 +95,7 @@ public class AppTheme {
         tabla.setFillsViewportHeight(true);
         tabla.getTableHeader().setFont(fuenteNegrita(12));
         tabla.getTableHeader().setBackground(ROJO_OSCURO);
-        tabla.getTableHeader().setForeground(Color.WHITE);
+        tabla.getTableHeader().setForeground(TEXTO);
         tabla.getTableHeader().setReorderingAllowed(false);
     }
 
