@@ -31,6 +31,8 @@ public class LoginView extends JFrame {
     private static final Color TEXTO = new Color(31, 41, 51);
     private static final Color TEXTO_SUAVE = new Color(102, 112, 133);
     private static final Color PELIGRO = new Color(179, 38, 30);
+    private static final Color BOTON_FONDO = new Color(229, 233, 240);
+    private static final Color BOTON_BORDE = new Color(188, 198, 211);
 
     private JPanel contentPane;
     private JPanel panelMarca;
@@ -64,20 +66,20 @@ public class LoginView extends JFrame {
         setContentPane(contentPane);
 
         panelMarca = new JPanel();
-        panelMarca.setBackground(ROJO);
+        panelMarca.setBackground(BOTON_FONDO);
         panelMarca.setBounds(0, 0, 330, 520);
         panelMarca.setLayout(null);
         contentPane.add(panelMarca);
 
         lblSistema = new JLabel("ABARROTES");
         lblSistema.setFont(new Font("Segoe UI", Font.BOLD, 34));
-        lblSistema.setForeground(Color.WHITE);
+        lblSistema.setForeground(TEXTO);
         lblSistema.setBounds(34, 185, 260, 45);
         panelMarca.add(lblSistema);
 
         lblEquipo = new JLabel("Equipo 6");
         lblEquipo.setFont(new Font("Segoe UI", Font.PLAIN, 18));
-        lblEquipo.setForeground(new Color(255, 238, 180));
+        lblEquipo.setForeground(TEXTO_SUAVE);
         lblEquipo.setBounds(36, 236, 220, 26);
         panelMarca.add(lblEquipo);
 
@@ -135,18 +137,21 @@ public class LoginView extends JFrame {
 
         lblError = new JLabel(" ");
         lblError.setFont(new Font("Segoe UI", Font.BOLD, 12));
-        lblError.setForeground(PELIGRO);
+        lblError.setForeground(TEXTO_SUAVE);
         lblError.setHorizontalAlignment(SwingConstants.LEFT);
         lblError.setBounds(34, 232, 320, 20);
         panelFormulario.add(lblError);
 
         btnEntrar = new JButton("INGRESAR");
         btnEntrar.setFont(new Font("Segoe UI", Font.BOLD, 13));
-        btnEntrar.setForeground(Color.WHITE);
-        btnEntrar.setBackground(ROJO_OSCURO);
+        btnEntrar.setForeground(TEXTO);
+        btnEntrar.setBackground(BOTON_FONDO);
         btnEntrar.setOpaque(true);
+        btnEntrar.setContentAreaFilled(true);
         btnEntrar.setFocusPainted(false);
-        btnEntrar.setBorder(BorderFactory.createEmptyBorder(8, 18, 8, 18));
+        btnEntrar.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(BOTON_BORDE),
+                BorderFactory.createEmptyBorder(8, 18, 8, 18)));
         btnEntrar.setBounds(34, 268, 320, 40);
         btnEntrar.addActionListener(e -> validarAcceso());
         panelFormulario.add(btnEntrar);

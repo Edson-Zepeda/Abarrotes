@@ -64,16 +64,16 @@ public class MenuPrincipal extends JFrame {
 
     private JPanel crearBarraSuperior() {
         JPanel panel = new JPanel(new BorderLayout());
-        panel.setBackground(AppTheme.ROJO);
+        panel.setBackground(AppTheme.BOTON_FONDO);
         panel.setBorder(AppTheme.bordeVacio(14, 22, 14, 22));
 
         JLabel titulo = new JLabel("Abarrotes");
         titulo.setFont(AppTheme.fuenteNegrita(24));
-        titulo.setForeground(Color.WHITE);
+        titulo.setForeground(AppTheme.TEXTO);
 
         JLabel usuario = new JLabel("Rol actual: " + rol);
         usuario.setFont(AppTheme.fuenteNegrita(13));
-        usuario.setForeground(new Color(255, 238, 180));
+        usuario.setForeground(AppTheme.TEXTO_SUAVE);
         usuario.setHorizontalAlignment(SwingConstants.RIGHT);
 
         panel.add(titulo, BorderLayout.WEST);
@@ -84,7 +84,7 @@ public class MenuPrincipal extends JFrame {
     private JPanel crearMenuLateral() {
         JPanel panel = new JPanel(new BorderLayout(0, 12));
         panel.setPreferredSize(new Dimension(245, 0));
-        panel.setBackground(AppTheme.ROJO_OSCURO);
+        panel.setBackground(AppTheme.FONDO);
         panel.setBorder(AppTheme.bordeVacio(18, 14, 18, 14));
 
         JPanel botones = new JPanel(new GridLayout(7, 1, 0, 10));
@@ -171,7 +171,7 @@ public class MenuPrincipal extends JFrame {
         lblTitulo.setForeground(AppTheme.TEXTO_SUAVE);
 
         valor.setFont(AppTheme.fuenteNegrita(28));
-        valor.setForeground(colorValor);
+        valor.setForeground(AppTheme.TEXTO);
 
         panel.add(lblTitulo, BorderLayout.NORTH);
         panel.add(valor, BorderLayout.CENTER);
@@ -182,14 +182,16 @@ public class MenuPrincipal extends JFrame {
         JButton boton = new JButton(texto);
         boton.setHorizontalAlignment(SwingConstants.LEFT);
         boton.setFont(AppTheme.fuenteNegrita(14));
+        boton.setOpaque(true);
+        boton.setContentAreaFilled(true);
         boton.setFocusPainted(false);
         boton.setCursor(new Cursor(Cursor.HAND_CURSOR));
         boton.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(destacado ? AppTheme.ROJO : AppTheme.ROJO_OSCURO),
+                BorderFactory.createLineBorder(AppTheme.BOTON_BORDE),
                 AppTheme.bordeVacio(12, 14, 12, 14)
         ));
-        boton.setBackground(destacado ? AppTheme.ROJO : AppTheme.ROJO_OSCURO);
-        boton.setForeground(Color.WHITE);
+        boton.setBackground(AppTheme.BOTON_FONDO);
+        boton.setForeground(AppTheme.TEXTO);
         return boton;
     }
 

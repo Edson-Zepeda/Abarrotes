@@ -31,6 +31,8 @@ public class AppTheme {
     public static final Color TEXTO = new Color(31, 41, 51);
     public static final Color TEXTO_SUAVE = new Color(102, 112, 133);
     public static final Color GRIS_TABLA = new Color(248, 249, 250);
+    public static final Color BOTON_FONDO = new Color(229, 233, 240);
+    public static final Color BOTON_BORDE = new Color(188, 198, 211);
 
     private static final Font FUENTE = new Font("Segoe UI", Font.PLAIN, 13);
     private static final NumberFormat MONEDA = NumberFormat.getCurrencyInstance(Locale.forLanguageTag("es-MX"));
@@ -90,8 +92,8 @@ public class AppTheme {
         tabla.setSelectionForeground(TEXTO);
         tabla.setFillsViewportHeight(true);
         tabla.getTableHeader().setFont(fuenteNegrita(12));
-        tabla.getTableHeader().setBackground(ROJO_OSCURO);
-        tabla.getTableHeader().setForeground(Color.WHITE);
+        tabla.getTableHeader().setBackground(BOTON_FONDO);
+        tabla.getTableHeader().setForeground(TEXTO);
         tabla.getTableHeader().setReorderingAllowed(false);
     }
 

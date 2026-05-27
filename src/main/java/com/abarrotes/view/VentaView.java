@@ -241,14 +241,14 @@ public class VentaView extends JDialog {
 
         lblTotal = new JLabel(AppTheme.moneda(0), SwingConstants.RIGHT);
         lblTotal.setFont(AppTheme.fuenteNegrita(34));
-        lblTotal.setForeground(AppTheme.VERDE);
+        lblTotal.setForeground(AppTheme.TEXTO);
         lblArticulos = new JLabel("0 articulos", SwingConstants.RIGHT);
         lblArticulos.setFont(AppTheme.fuenteNegrita(13));
         lblArticulos.setForeground(AppTheme.TEXTO_SUAVE);
         txtRecibido = UiFactory.campoTexto();
         lblCambio = new JLabel("Cambio: " + AppTheme.moneda(0), SwingConstants.RIGHT);
         lblCambio.setFont(AppTheme.fuenteNegrita(15));
-        lblCambio.setForeground(AppTheme.ROJO);
+        lblCambio.setForeground(AppTheme.TEXTO_SUAVE);
         JButton btnCobrar = UiFactory.botonExito("F12 Cobrar");
         btnCobrar.addActionListener(e -> finalizarVenta());
 
@@ -511,7 +511,7 @@ public class VentaView extends JDialog {
         String recibidoTexto = txtRecibido.getText().trim();
         if (recibidoTexto.isEmpty()) {
             lblCambio.setText("Cambio: " + AppTheme.moneda(0));
-            lblCambio.setForeground(AppTheme.ROJO);
+            lblCambio.setForeground(AppTheme.TEXTO_SUAVE);
             return;
         }
 
@@ -519,10 +519,10 @@ public class VentaView extends JDialog {
             double recibido = Double.parseDouble(recibidoTexto);
             double cambio = recibido - total;
             lblCambio.setText("Cambio: " + AppTheme.moneda(Math.max(0, cambio)));
-            lblCambio.setForeground(cambio >= 0 ? AppTheme.VERDE : AppTheme.PELIGRO);
+            lblCambio.setForeground(cambio >= 0 ? AppTheme.TEXTO : AppTheme.TEXTO_SUAVE);
         } catch (NumberFormatException e) {
             lblCambio.setText("Efectivo invalido");
-            lblCambio.setForeground(AppTheme.PELIGRO);
+            lblCambio.setForeground(AppTheme.TEXTO_SUAVE);
         }
     }
 

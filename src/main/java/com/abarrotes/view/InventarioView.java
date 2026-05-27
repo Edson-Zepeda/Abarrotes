@@ -377,7 +377,7 @@ public class InventarioView extends JDialog {
                 setForeground(AppTheme.TEXTO);
                 setBackground(row % 2 == 0 ? AppTheme.SUPERFICIE : AppTheme.GRIS_TABLA);
                 if (value instanceof Integer && ((Integer) value) <= 10) {
-                    setForeground(AppTheme.PELIGRO);
+                    setForeground(AppTheme.TEXTO);
                     setBackground(new Color(255, 238, 235));
                 }
             }

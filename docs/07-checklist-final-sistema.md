@@ -122,4 +122,6 @@ Este checklist resume el estado final del sistema despues de los ajustes solicit
 - [x] Proyecto listo para importar en Eclipse como `Abarrotes`.
 - [x] Vistas principales corregidas para WindowBuilder sin reutilizar `GridBagConstraints`.
 - [x] `ClienteView`, `InventarioView`, `ProveedorView`, `UsuarioView` y `VentaView` sin error de doble asociacion `gbc`.
+- [x] Textos visibles sin color blanco.
+- [x] Botones unificados con el mismo fondo y texto oscuro.
 - [x] Proyecto listo para entrega.

@@ -82,7 +82,7 @@ public class CorteCajaView extends JDialog {
         lblTitulo.setFont(AppTheme.fuenteNegrita(12));
         lblTitulo.setForeground(AppTheme.TEXTO_SUAVE);
         valor.setFont(AppTheme.fuenteNegrita(28));
-        valor.setForeground(colorValor);
+        valor.setForeground(AppTheme.TEXTO);
 
         panel.add(lblTitulo, BorderLayout.NORTH);
         panel.add(valor, BorderLayout.CENTER);
