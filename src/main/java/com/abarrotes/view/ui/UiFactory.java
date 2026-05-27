@@ -32,7 +32,7 @@ public class UiFactory {
 
     public static JPanel encabezado(String titulo, String subtitulo) {
         JPanel panel = new JPanel(new BorderLayout());
-        panel.setBackground(AppTheme.BOTON_FONDO);
+        panel.setBackground(AppTheme.ROJO);
         panel.setBorder(AppTheme.bordeVacio(14, 18, 0, 18));
 
         JLabel lblTitulo = new JLabel(titulo);

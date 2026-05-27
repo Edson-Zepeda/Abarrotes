@@ -27,7 +27,7 @@ public class LoginView extends JFrame {
     private static final Color AMARILLO = new Color(249, 200, 70);
     private static final Color FONDO = new Color(245, 246, 247);
     private static final Color SUPERFICIE = Color.WHITE;
-    private static final Color BORDE = new Color(215, 220, 226);
+    private static final Color BORDE = ROJO_OSCURO;
     private static final Color TEXTO = new Color(31, 41, 51);
     private static final Color TEXTO_SUAVE = new Color(102, 112, 133);
     private static final Color PELIGRO = new Color(179, 38, 30);
@@ -66,7 +66,7 @@ public class LoginView extends JFrame {
         setContentPane(contentPane);
 
         panelMarca = new JPanel();
-        panelMarca.setBackground(BOTON_FONDO);
+        panelMarca.setBackground(ROJO);
         panelMarca.setBounds(0, 0, 330, 520);
         panelMarca.setLayout(null);
         contentPane.add(panelMarca);

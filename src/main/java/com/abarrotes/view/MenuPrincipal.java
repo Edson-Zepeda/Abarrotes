@@ -64,7 +64,7 @@ public class MenuPrincipal extends JFrame {
 
     private JPanel crearBarraSuperior() {
         JPanel panel = new JPanel(new BorderLayout());
-        panel.setBackground(AppTheme.BOTON_FONDO);
+        panel.setBackground(AppTheme.ROJO);
         panel.setBorder(AppTheme.bordeVacio(14, 22, 14, 22));
 
         JLabel titulo = new JLabel("Abarrotes");
@@ -84,7 +84,7 @@ public class MenuPrincipal extends JFrame {
     private JPanel crearMenuLateral() {
         JPanel panel = new JPanel(new BorderLayout(0, 12));
         panel.setPreferredSize(new Dimension(245, 0));
-        panel.setBackground(AppTheme.FONDO);
+        panel.setBackground(AppTheme.ROJO_OSCURO);
         panel.setBorder(AppTheme.bordeVacio(18, 14, 18, 14));
 
         JPanel botones = new JPanel(new GridLayout(7, 1, 0, 10));

@@ -27,7 +27,7 @@ public class AppTheme {
     public static final Color PELIGRO = new Color(179, 38, 30);
     public static final Color FONDO = new Color(245, 246, 247);
     public static final Color SUPERFICIE = Color.WHITE;
-    public static final Color BORDE = new Color(215, 220, 226);
+    public static final Color BORDE = ROJO_OSCURO;
     public static final Color TEXTO = new Color(31, 41, 51);
     public static final Color TEXTO_SUAVE = new Color(102, 112, 133);
     public static final Color GRIS_TABLA = new Color(248, 249, 250);
@@ -86,13 +86,13 @@ public class AppTheme {
         tabla.setFont(fuenteNormal(13));
         tabla.setForeground(TEXTO);
         tabla.setBackground(SUPERFICIE);
-        tabla.setGridColor(new Color(232, 235, 239));
+        tabla.setGridColor(BORDE);
         tabla.setShowVerticalLines(false);
         tabla.setSelectionBackground(new Color(255, 243, 199));
         tabla.setSelectionForeground(TEXTO);
         tabla.setFillsViewportHeight(true);
         tabla.getTableHeader().setFont(fuenteNegrita(12));
-        tabla.getTableHeader().setBackground(BOTON_FONDO);
+        tabla.getTableHeader().setBackground(ROJO_OSCURO);
         tabla.getTableHeader().setForeground(TEXTO);
         tabla.getTableHeader().setReorderingAllowed(false);
     }
