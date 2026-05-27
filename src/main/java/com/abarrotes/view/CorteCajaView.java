@@ -3,15 +3,19 @@ package com.abarrotes.view;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.io.File;
+import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import com.abarrotes.app.Main;
 import com.abarrotes.model.Venta;
+import com.abarrotes.ticket.TicketPdfService;
 import com.abarrotes.view.ui.AppTheme;
 import com.abarrotes.view.ui.NonEditableTableModel;
 import com.abarrotes.view.ui.UiFactory;
@@ -64,12 +68,19 @@ public class CorteCajaView extends JDialog {
         centro.add(new JScrollPane(tabla), BorderLayout.CENTER);
         centro.add(lblVacio, BorderLayout.SOUTH);
 
+        JButton btnImprimir = UiFactory.botonPrimario("Imprimir corte PDF");
         JButton btnVolver = UiFactory.botonClaro("Regresar al menu");
+        btnImprimir.addActionListener(e -> imprimirCortePdf());
         btnVolver.addActionListener(e -> dispose());
+
+        JPanel acciones = new JPanel(new GridLayout(1, 2, 10, 0));
+        acciones.setBackground(AppTheme.FONDO);
+        acciones.add(btnImprimir);
+        acciones.add(btnVolver);
 
         panel.add(resumen, BorderLayout.NORTH);
         panel.add(centro, BorderLayout.CENTER);
-        panel.add(btnVolver, BorderLayout.SOUTH);
+        panel.add(acciones, BorderLayout.SOUTH);
         return panel;
     }
 
@@ -110,5 +121,14 @@ public class CorteCajaView extends JDialog {
         lblNumVentas.setText(String.valueOf(operaciones));
         lblPromedio.setText(AppTheme.moneda(operaciones == 0 ? 0 : sumaTotal / operaciones));
         lblVacio.setVisible(operaciones == 0);
+    }
+
+    private void imprimirCortePdf() {
+        try {
+            File archivo = TicketPdfService.imprimirCorte(Main.ventasDelDia);
+            JOptionPane.showMessageDialog(this, "Ticket de corte guardado en:\n" + archivo.getAbsolutePath());
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "No se pudo crear el ticket de corte en PDF.");
+        }
     }
 }

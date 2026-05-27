@@ -3,6 +3,7 @@ build/
 target/
 dist/
 data/*.db
+tickets/*.pdf
 *.class
 *.jar
 !lib/*.jar

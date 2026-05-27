@@ -101,12 +101,14 @@ Este checklist resume el estado final del sistema despues de los ajustes solicit
 - [x] Ventas calcula cambio.
 - [x] Ventas descuenta existencias al cobrar.
 - [x] Ventas registra operaciones para corte de caja.
+- [x] Ventas genera ticket PDF al cobrar.
 
 - [x] Corte de caja muestra total vendido.
 - [x] Corte de caja muestra numero de operaciones.
 - [x] Corte de caja muestra ticket promedio.
 - [x] Corte de caja muestra historial de ventas.
 - [x] Corte de caja muestra estado claro cuando no hay ventas.
+- [x] Corte de caja genera ticket PDF desde boton dedicado.
 
 ## Limpieza del proyecto
 
@@ -117,6 +119,8 @@ Este checklist resume el estado final del sistema despues de los ajustes solicit
 - [x] Archivos generados excluidos del ZIP.
 - [x] Archivos innecesarios eliminados de la entrega.
 - [x] Nombre final del sistema: `Abarrotes`.
+- [x] Carpeta `tickets` agregada para guardar los PDF generados.
+- [x] Paquete `com.abarrotes.ticket` separado para la creacion de tickets.
 
 ## Verificacion final
 

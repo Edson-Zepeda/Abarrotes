@@ -13,6 +13,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -43,6 +45,8 @@ import com.abarrotes.app.Main;
 import com.abarrotes.model.Cliente;
 import com.abarrotes.model.Producto;
 import com.abarrotes.model.Venta;
+import com.abarrotes.ticket.LineaTicket;
+import com.abarrotes.ticket.TicketPdfService;
 import com.abarrotes.view.ui.AppTheme;
 import com.abarrotes.view.ui.NonEditableTableModel;
 import com.abarrotes.view.ui.UiFactory;
@@ -555,12 +559,35 @@ public class VentaView extends JDialog {
 
         String hora = LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm"));
         int idVenta = Main.ventasDelDia.size() + 1;
-        Main.ventasDelDia.add(new Venta(idVenta, hora, obtenerNombreCliente(), total));
+        String cliente = obtenerNombreCliente();
+        Main.ventasDelDia.add(new Venta(idVenta, hora, cliente, total));
 
-        JOptionPane.showMessageDialog(this,
-                "Venta realizada por " + AppTheme.moneda(total)
-                        + "\nCambio: " + AppTheme.moneda(recibido - total));
+        File ticket = imprimirTicketVenta(idVenta, hora, cliente, total, recibido, recibido - total);
+        String mensaje = "Venta realizada por " + AppTheme.moneda(total)
+                + "\nCambio: " + AppTheme.moneda(recibido - total);
+        if (ticket != null) {
+            mensaje += "\nTicket PDF: " + ticket.getAbsolutePath();
+        }
+        JOptionPane.showMessageDialog(this, mensaje);
         dispose();
+    }
+
+    private File imprimirTicketVenta(int idVenta, String hora, String cliente, double total, double recibido, double cambio) {
+        ArrayList<LineaTicket> lineas = new ArrayList<>();
+        for (DetalleVenta detalle : carrito) {
+            lineas.add(new LineaTicket(
+                    detalle.producto.getNombre(),
+                    detalle.cantidad,
+                    detalle.producto.getPrecio(),
+                    detalle.getSubtotal()));
+        }
+
+        try {
+            return TicketPdfService.imprimirVenta(idVenta, hora, cliente, lineas, total, recibido, cambio);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "La venta se registro, pero no se pudo crear el ticket PDF.");
+            return null;
+        }
     }
 
     private String obtenerNombreCliente() {

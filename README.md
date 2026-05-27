@@ -20,6 +20,7 @@ Esta version es una copia mejorada con interfaz tipo punto de venta: login redis
 - Proveedores.
 - Ventas.
 - Corte de caja.
+- Tickets PDF de venta y corte de caja.
 - Catalogo de usuarios que utilizan el sistema.
 - 30 registros previamente cargados.
 - Validaciones completas.
@@ -42,6 +43,7 @@ docs/                 Planeacion, roles, backlog y guias de entrega
 lib/                  Driver SQLite JDBC para la base de datos local
 scripts/              Scripts simples para compilar y ejecutar
 src/main/java/        Codigo fuente Java
+tickets/              Carpeta donde se guardan los tickets PDF generados
 ```
 
 ## Como ejecutar
@@ -60,3 +62,6 @@ Ejecutar:
 
 Al ejecutar el sistema se crea la base de datos local `data/abarrotes.db`.
 El login inicial queda con `admin / 1234` y `empleado / 1234`.
+
+Al cobrar una venta se genera automaticamente un ticket PDF en `tickets/`.
+En corte de caja se puede usar el boton `Imprimir corte PDF` para guardar el ticket del corte.
