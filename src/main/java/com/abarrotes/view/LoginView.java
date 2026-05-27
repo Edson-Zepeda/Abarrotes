@@ -55,8 +55,8 @@ public class LoginView extends JFrame {
     private void initialize() {
         setTitle("Abarrotes - Acceso");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(860, 520);
-        setMinimumSize(new Dimension(860, 520));
+        setSize(900, 560);
+        setMinimumSize(new Dimension(900, 560));
         setResizable(false);
         setLocationRelativeTo(null);
 
@@ -67,7 +67,7 @@ public class LoginView extends JFrame {
 
         panelMarca = new JPanel();
         panelMarca.setBackground(ROJO);
-        panelMarca.setBounds(0, 0, 330, 520);
+        panelMarca.setBounds(0, 0, 340, 560);
         panelMarca.setLayout(null);
         contentPane.add(panelMarca);
 
@@ -93,7 +93,7 @@ public class LoginView extends JFrame {
         panelFormulario.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(BORDE),
                 BorderFactory.createEmptyBorder(30, 34, 30, 34)));
-        panelFormulario.setBounds(400, 82, 390, 340);
+        panelFormulario.setBounds(420, 100, 400, 340);
         panelFormulario.setLayout(null);
         contentPane.add(panelFormulario);
 
@@ -116,7 +116,7 @@ public class LoginView extends JFrame {
         txtUsuario.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(BORDE),
                 BorderFactory.createEmptyBorder(6, 10, 6, 10)));
-        txtUsuario.setBounds(34, 110, 320, 36);
+        txtUsuario.setBounds(34, 110, 330, 36);
         panelFormulario.add(txtUsuario);
 
         lblPassword = new JLabel("Contrasena");
@@ -132,14 +132,14 @@ public class LoginView extends JFrame {
         txtPassword.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(BORDE),
                 BorderFactory.createEmptyBorder(6, 10, 6, 10)));
-        txtPassword.setBounds(34, 188, 320, 36);
+        txtPassword.setBounds(34, 188, 330, 36);
         panelFormulario.add(txtPassword);
 
         lblError = new JLabel(" ");
         lblError.setFont(new Font("Segoe UI", Font.BOLD, 12));
         lblError.setForeground(TEXTO_SUAVE);
         lblError.setHorizontalAlignment(SwingConstants.LEFT);
-        lblError.setBounds(34, 232, 320, 20);
+        lblError.setBounds(34, 232, 330, 20);
         panelFormulario.add(lblError);
 
         btnEntrar = new JButton("INGRESAR");
@@ -152,7 +152,7 @@ public class LoginView extends JFrame {
         btnEntrar.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(BOTON_BORDE),
                 BorderFactory.createEmptyBorder(8, 18, 8, 18)));
-        btnEntrar.setBounds(34, 268, 320, 40);
+        btnEntrar.setBounds(34, 268, 330, 40);
         btnEntrar.addActionListener(e -> validarAcceso());
         panelFormulario.add(btnEntrar);
 

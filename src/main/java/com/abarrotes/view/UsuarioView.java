@@ -46,8 +46,8 @@ public class UsuarioView extends JDialog {
 
     public UsuarioView(JFrame parent) {
         super(parent, "Usuarios - Abarrotes", true);
-        setSize(980, 620);
-        setMinimumSize(new Dimension(900, 560));
+        setSize(1040, 680);
+        setMinimumSize(new Dimension(960, 620));
         setLocationRelativeTo(parent);
         setLayout(new BorderLayout());
 
@@ -100,14 +100,14 @@ public class UsuarioView extends JDialog {
 
     private JPanel crearFormulario() {
         JPanel panel = new JPanel(new GridBagLayout());
-        panel.setPreferredSize(new Dimension(305, 0));
+        panel.setPreferredSize(new Dimension(325, 0));
         panel.setBackground(AppTheme.SUPERFICIE);
         panel.setBorder(AppTheme.bordeTarjeta());
 
         lblModo = UiFactory.tituloPanel("Nuevo usuario");
         txtUser = UiFactory.campoTexto();
         txtPass = UiFactory.campoPassword();
-        comboRol = new JComboBox<>(new String[]{"Admin", "Empleado"});
+        comboRol = new JComboBox<>(new String[]{"Administrador", "Empleado"});
         comboRol.setFont(AppTheme.fuenteNormal(13));
 
         JButton btnAgregar = UiFactory.botonPrimario("Registrar");
@@ -251,7 +251,7 @@ public class UsuarioView extends JDialog {
             JOptionPane.showMessageDialog(this, "Ese usuario ya existe");
             return;
         }
-        if (seleccionado.getRol().equals("Admin") && !rol.equals("Admin") && contarAdmins() <= 1) {
+        if (esAdministrador(seleccionado.getRol()) && !esAdministrador(rol) && contarAdmins() <= 1) {
             JOptionPane.showMessageDialog(this, "Debe existir al menos un administrador");
             return;
         }
@@ -275,7 +275,7 @@ public class UsuarioView extends JDialog {
             JOptionPane.showMessageDialog(this, "Selecciona un usuario de la tabla");
             return;
         }
-        if (seleccionado.getRol().equals("Admin") && contarAdmins() <= 1) {
+        if (esAdministrador(seleccionado.getRol()) && contarAdmins() <= 1) {
             JOptionPane.showMessageDialog(this, "Debe existir al menos un administrador");
             return;
         }
@@ -304,9 +304,9 @@ public class UsuarioView extends JDialog {
         for (Usuario u : Main.listaUsuarios) {
             if (busqueda.isEmpty()
                     || u.getUsername().toLowerCase().contains(busqueda)
-                    || u.getRol().toLowerCase().contains(busqueda)) {
+                    || textoRol(u.getRol()).toLowerCase().contains(busqueda)) {
                 listaFiltrada.add(u);
-                modelo.addRow(new Object[]{u.getUsername(), u.getRol()});
+                modelo.addRow(new Object[]{u.getUsername(), textoRol(u.getRol())});
             }
         }
         lblRegistros.setText(listaFiltrada.size() + " registros");
@@ -318,7 +318,7 @@ public class UsuarioView extends JDialog {
         if (usuario != null) {
             txtUser.setText(usuario.getUsername());
             txtPass.setText(usuario.getPassword());
-            comboRol.setSelectedItem(usuario.getRol());
+            comboRol.setSelectedItem(textoRol(usuario.getRol()));
             lblModo.setText("Editar usuario");
         }
         actualizarEstadoBotones();
@@ -335,11 +335,25 @@ public class UsuarioView extends JDialog {
     private int contarAdmins() {
         int total = 0;
         for (Usuario u : Main.listaUsuarios) {
-            if (u.getRol().equals("Admin")) {
+            if (esAdministrador(u.getRol())) {
                 total++;
             }
         }
         return total;
+    }
+
+    private boolean esAdministrador(String rol) {
+        return "Admin".equalsIgnoreCase(rol) || "Administrador".equalsIgnoreCase(rol);
+    }
+
+    private String textoRol(String rol) {
+        if (esAdministrador(rol)) {
+            return "Administrador";
+        }
+        if ("Empleado".equalsIgnoreCase(rol)) {
+            return "Empleado";
+        }
+        return rol;
     }
 
     private void limpiarCampos() {

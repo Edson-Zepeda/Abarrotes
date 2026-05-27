@@ -27,8 +27,8 @@ public class CorteCajaView extends JDialog {
 
     public CorteCajaView(JFrame parent) {
         super(parent, "Corte de Caja - Abarrotes", true);
-        setSize(980, 620);
-        setMinimumSize(new Dimension(900, 560));
+        setSize(1040, 680);
+        setMinimumSize(new Dimension(960, 620));
         setLocationRelativeTo(parent);
         setLayout(new BorderLayout());
 

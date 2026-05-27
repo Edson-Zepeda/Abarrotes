@@ -41,8 +41,8 @@ public class ProveedorView extends JDialog {
 
     public ProveedorView(JFrame parent) {
         super(parent, "Proveedores - Abarrotes", true);
-        setSize(980, 620);
-        setMinimumSize(new Dimension(900, 560));
+        setSize(1040, 680);
+        setMinimumSize(new Dimension(960, 620));
         setLocationRelativeTo(parent);
         setLayout(new BorderLayout());
 
@@ -95,7 +95,7 @@ public class ProveedorView extends JDialog {
 
     private JPanel crearFormulario() {
         JPanel panel = new JPanel(new GridBagLayout());
-        panel.setPreferredSize(new Dimension(305, 0));
+        panel.setPreferredSize(new Dimension(325, 0));
         panel.setBackground(AppTheme.SUPERFICIE);
         panel.setBorder(AppTheme.bordeTarjeta());
 

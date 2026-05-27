@@ -10,11 +10,11 @@ public class Usuario {
 	//Atributos necesarios para Usuarios del sistema
 	private String username;
     private String password;
-    private String rol; // "Admin" o "Empleado"
+    private String rol; // "Administrador" o "Empleado"
     
     /**
      * Constructor de la clase Usuario.
-     * - "Admin": Acceso total 
+     * - "Administrador": Acceso total 
      * - "Empleado": Acceso limitado 
      */
     

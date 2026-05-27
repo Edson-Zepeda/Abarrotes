@@ -46,8 +46,8 @@ public class MenuPrincipal extends JFrame {
 
         setTitle("Sistema de Abarrotes - Equipo 6");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1100, 700);
-        setMinimumSize(new Dimension(980, 620));
+        setSize(1160, 740);
+        setMinimumSize(new Dimension(1040, 660));
         setLocationRelativeTo(null);
 
         JPanel contentPane = new JPanel(new BorderLayout());
@@ -71,7 +71,7 @@ public class MenuPrincipal extends JFrame {
         titulo.setFont(AppTheme.fuenteNegrita(24));
         titulo.setForeground(Color.WHITE);
 
-        JLabel usuario = new JLabel("Rol actual: " + rol);
+        JLabel usuario = new JLabel(textoRol(rol));
         usuario.setFont(AppTheme.fuenteNegrita(13));
         usuario.setForeground(Color.WHITE);
         usuario.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -241,6 +241,16 @@ public class MenuPrincipal extends JFrame {
             btnUsuarios.setText("Usuarios");
             btnUsuarios.setToolTipText("Disponible para administrador");
         }
+    }
+
+    private String textoRol(String rol) {
+        if ("Admin".equalsIgnoreCase(rol) || "Administrador".equalsIgnoreCase(rol)) {
+            return "Administrador";
+        }
+        if ("Empleado".equalsIgnoreCase(rol)) {
+            return "Empleado";
+        }
+        return rol;
     }
 
     private void actualizarDashboard() {

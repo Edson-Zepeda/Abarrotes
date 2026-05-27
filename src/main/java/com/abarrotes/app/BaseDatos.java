@@ -57,7 +57,7 @@ public class BaseDatos {
         try (Connection conexion = conectar();
              Statement statement = conexion.createStatement()) {
             statement.execute(tablaUsuarios);
-            guardarUsuarioInicial(conexion, "admin", "1234", "Admin");
+            guardarUsuarioInicial(conexion, "admin", "1234", "Administrador");
             guardarUsuarioInicial(conexion, "empleado", "1234", "Empleado");
             System.out.println("BASE DE DATOS: Usuarios listos en SQLite.");
         } catch (SQLException e) {

@@ -74,8 +74,8 @@ public class VentaView extends JDialog {
 
     public VentaView(JFrame parent) {
         super(parent, "Terminal de Ventas - Abarrotes", true);
-        setSize(1180, 720);
-        setMinimumSize(new Dimension(1060, 650));
+        setSize(1240, 760);
+        setMinimumSize(new Dimension(1120, 700));
         setLocationRelativeTo(parent);
         setLayout(new BorderLayout());
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -211,7 +211,7 @@ public class VentaView extends JDialog {
 
     private JPanel crearPanelCliente() {
         JPanel panel = new JPanel(new BorderLayout(0, 6));
-        panel.setPreferredSize(new Dimension(245, 150));
+        panel.setPreferredSize(new Dimension(270, 150));
         panel.setBackground(AppTheme.SUPERFICIE);
         panel.setBorder(AppTheme.bordeTarjeta());
 

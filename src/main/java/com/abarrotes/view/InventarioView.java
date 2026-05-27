@@ -45,8 +45,8 @@ public class InventarioView extends JDialog {
     public InventarioView(JFrame parent, ArrayList<Producto> listaProductos) {
         super(parent, "Inventario - Abarrotes", true);
         this.listaProductos = listaProductos;
-        setSize(980, 620);
-        setMinimumSize(new Dimension(900, 560));
+        setSize(1040, 680);
+        setMinimumSize(new Dimension(960, 620));
         setLocationRelativeTo(parent);
         setLayout(new BorderLayout());
 
@@ -101,7 +101,7 @@ public class InventarioView extends JDialog {
 
     private JPanel crearFormulario() {
         JPanel panel = new JPanel(new GridBagLayout());
-        panel.setPreferredSize(new Dimension(305, 0));
+        panel.setPreferredSize(new Dimension(325, 0));
         panel.setBackground(AppTheme.SUPERFICIE);
         panel.setBorder(AppTheme.bordeTarjeta());
 
