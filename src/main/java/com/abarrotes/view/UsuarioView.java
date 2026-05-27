@@ -127,42 +127,84 @@ public class UsuarioView extends JDialog {
         botones.add(btnLimpiar);
         botones.add(btnBorrar);
 
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.weightx = 1;
+        JLabel lblUsuario = UiFactory.etiqueta("Usuario");
+        JLabel lblContrasena = UiFactory.etiqueta("Contrasena");
+        JLabel lblRol = UiFactory.etiqueta("Rol");
+        JLabel separador = new JLabel();
 
-        gbc.gridy = 0;
-        gbc.insets = new Insets(0, 0, 18, 0);
-        panel.add(lblModo, gbc);
-        agregarCampo(panel, gbc, "Usuario", txtUser);
-        agregarCampo(panel, gbc, "Contrasena", txtPass);
+        GridBagConstraints gbcLblModo = new GridBagConstraints();
+        gbcLblModo.gridx = 0;
+        gbcLblModo.gridy = 0;
+        gbcLblModo.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblModo.weightx = 1;
+        gbcLblModo.insets = new Insets(0, 0, 18, 0);
+        panel.add(lblModo, gbcLblModo);
 
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 6, 0);
-        panel.add(UiFactory.etiqueta("Rol"), gbc);
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 14, 0);
-        panel.add(comboRol, gbc);
+        GridBagConstraints gbcLblUsuario = new GridBagConstraints();
+        gbcLblUsuario.gridx = 0;
+        gbcLblUsuario.gridy = 1;
+        gbcLblUsuario.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblUsuario.weightx = 1;
+        gbcLblUsuario.insets = new Insets(0, 0, 6, 0);
+        panel.add(lblUsuario, gbcLblUsuario);
 
-        gbc.gridy++;
-        gbc.weighty = 1;
-        panel.add(new JLabel(), gbc);
-        gbc.gridy++;
-        gbc.weighty = 0;
-        gbc.insets = new Insets(12, 0, 0, 0);
-        panel.add(botones, gbc);
+        GridBagConstraints gbcTxtUser = new GridBagConstraints();
+        gbcTxtUser.gridx = 0;
+        gbcTxtUser.gridy = 2;
+        gbcTxtUser.fill = GridBagConstraints.HORIZONTAL;
+        gbcTxtUser.weightx = 1;
+        gbcTxtUser.insets = new Insets(0, 0, 14, 0);
+        panel.add(txtUser, gbcTxtUser);
+
+        GridBagConstraints gbcLblContrasena = new GridBagConstraints();
+        gbcLblContrasena.gridx = 0;
+        gbcLblContrasena.gridy = 3;
+        gbcLblContrasena.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblContrasena.weightx = 1;
+        gbcLblContrasena.insets = new Insets(0, 0, 6, 0);
+        panel.add(lblContrasena, gbcLblContrasena);
+
+        GridBagConstraints gbcTxtPass = new GridBagConstraints();
+        gbcTxtPass.gridx = 0;
+        gbcTxtPass.gridy = 4;
+        gbcTxtPass.fill = GridBagConstraints.HORIZONTAL;
+        gbcTxtPass.weightx = 1;
+        gbcTxtPass.insets = new Insets(0, 0, 14, 0);
+        panel.add(txtPass, gbcTxtPass);
+
+        GridBagConstraints gbcLblRol = new GridBagConstraints();
+        gbcLblRol.gridx = 0;
+        gbcLblRol.gridy = 5;
+        gbcLblRol.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblRol.weightx = 1;
+        gbcLblRol.insets = new Insets(0, 0, 6, 0);
+        panel.add(lblRol, gbcLblRol);
+
+        GridBagConstraints gbcComboRol = new GridBagConstraints();
+        gbcComboRol.gridx = 0;
+        gbcComboRol.gridy = 6;
+        gbcComboRol.fill = GridBagConstraints.HORIZONTAL;
+        gbcComboRol.weightx = 1;
+        gbcComboRol.insets = new Insets(0, 0, 14, 0);
+        panel.add(comboRol, gbcComboRol);
+
+        GridBagConstraints gbcSeparador = new GridBagConstraints();
+        gbcSeparador.gridx = 0;
+        gbcSeparador.gridy = 7;
+        gbcSeparador.fill = GridBagConstraints.HORIZONTAL;
+        gbcSeparador.weightx = 1;
+        gbcSeparador.weighty = 1;
+        panel.add(separador, gbcSeparador);
+
+        GridBagConstraints gbcBotones = new GridBagConstraints();
+        gbcBotones.gridx = 0;
+        gbcBotones.gridy = 8;
+        gbcBotones.fill = GridBagConstraints.HORIZONTAL;
+        gbcBotones.weightx = 1;
+        gbcBotones.insets = new Insets(12, 0, 0, 0);
+        panel.add(botones, gbcBotones);
 
         return panel;
-    }
-
-    private void agregarCampo(JPanel panel, GridBagConstraints gbc, String etiqueta, JTextField campo) {
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 6, 0);
-        panel.add(UiFactory.etiqueta(etiqueta), gbc);
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 14, 0);
-        panel.add(campo, gbc);
     }
 
     // Guarda el usuario nuevo en SQLite y en la lista general del programa (Main).

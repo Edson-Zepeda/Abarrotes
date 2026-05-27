@@ -252,32 +252,64 @@ public class VentaView extends JDialog {
         JButton btnCobrar = UiFactory.botonExito("F12 Cobrar");
         btnCobrar.addActionListener(e -> finalizarVenta());
 
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.weightx = 1;
+        JLabel lblTotalPagar = UiFactory.etiqueta("Total a pagar");
+        JLabel lblEfectivoRecibido = UiFactory.etiqueta("Efectivo recibido");
 
-        gbc.gridy = 0;
-        gbc.insets = new Insets(0, 0, 4, 0);
-        panel.add(UiFactory.etiqueta("Total a pagar"), gbc);
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 0, 0);
-        panel.add(lblTotal, gbc);
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 10, 0);
-        panel.add(lblArticulos, gbc);
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 6, 0);
-        panel.add(UiFactory.etiqueta("Efectivo recibido"), gbc);
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 8, 0);
-        panel.add(txtRecibido, gbc);
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 12, 0);
-        panel.add(lblCambio, gbc);
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 0, 0);
-        panel.add(btnCobrar, gbc);
+        GridBagConstraints gbcLblTotalPagar = new GridBagConstraints();
+        gbcLblTotalPagar.gridx = 0;
+        gbcLblTotalPagar.gridy = 0;
+        gbcLblTotalPagar.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblTotalPagar.weightx = 1;
+        gbcLblTotalPagar.insets = new Insets(0, 0, 4, 0);
+        panel.add(lblTotalPagar, gbcLblTotalPagar);
+
+        GridBagConstraints gbcLblTotal = new GridBagConstraints();
+        gbcLblTotal.gridx = 0;
+        gbcLblTotal.gridy = 1;
+        gbcLblTotal.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblTotal.weightx = 1;
+        gbcLblTotal.insets = new Insets(0, 0, 0, 0);
+        panel.add(lblTotal, gbcLblTotal);
+
+        GridBagConstraints gbcLblArticulos = new GridBagConstraints();
+        gbcLblArticulos.gridx = 0;
+        gbcLblArticulos.gridy = 2;
+        gbcLblArticulos.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblArticulos.weightx = 1;
+        gbcLblArticulos.insets = new Insets(0, 0, 10, 0);
+        panel.add(lblArticulos, gbcLblArticulos);
+
+        GridBagConstraints gbcLblEfectivoRecibido = new GridBagConstraints();
+        gbcLblEfectivoRecibido.gridx = 0;
+        gbcLblEfectivoRecibido.gridy = 3;
+        gbcLblEfectivoRecibido.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblEfectivoRecibido.weightx = 1;
+        gbcLblEfectivoRecibido.insets = new Insets(0, 0, 6, 0);
+        panel.add(lblEfectivoRecibido, gbcLblEfectivoRecibido);
+
+        GridBagConstraints gbcTxtRecibido = new GridBagConstraints();
+        gbcTxtRecibido.gridx = 0;
+        gbcTxtRecibido.gridy = 4;
+        gbcTxtRecibido.fill = GridBagConstraints.HORIZONTAL;
+        gbcTxtRecibido.weightx = 1;
+        gbcTxtRecibido.insets = new Insets(0, 0, 8, 0);
+        panel.add(txtRecibido, gbcTxtRecibido);
+
+        GridBagConstraints gbcLblCambio = new GridBagConstraints();
+        gbcLblCambio.gridx = 0;
+        gbcLblCambio.gridy = 5;
+        gbcLblCambio.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblCambio.weightx = 1;
+        gbcLblCambio.insets = new Insets(0, 0, 12, 0);
+        panel.add(lblCambio, gbcLblCambio);
+
+        GridBagConstraints gbcBtnCobrar = new GridBagConstraints();
+        gbcBtnCobrar.gridx = 0;
+        gbcBtnCobrar.gridy = 6;
+        gbcBtnCobrar.fill = GridBagConstraints.HORIZONTAL;
+        gbcBtnCobrar.weightx = 1;
+        gbcBtnCobrar.insets = new Insets(0, 0, 0, 0);
+        panel.add(btnCobrar, gbcBtnCobrar);
 
         txtRecibido.getDocument().addDocumentListener(new DocumentListener() {
             public void insertUpdate(DocumentEvent e) { actualizarCambio(); }

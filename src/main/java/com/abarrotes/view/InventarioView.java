@@ -127,35 +127,84 @@ public class InventarioView extends JDialog {
         botones.add(btnLimpiar);
         botones.add(btnBorrar);
 
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.weightx = 1;
+        JLabel lblProducto = UiFactory.etiqueta("Producto");
+        JLabel lblPrecio = UiFactory.etiqueta("Precio");
+        JLabel lblExistencias = UiFactory.etiqueta("Existencias");
+        JLabel separador = new JLabel();
 
-        gbc.gridy = 0;
-        gbc.insets = new Insets(0, 0, 18, 0);
-        panel.add(lblModo, gbc);
-        agregarCampo(panel, gbc, "Producto", txtNombre);
-        agregarCampo(panel, gbc, "Precio", txtPrecio);
-        agregarCampo(panel, gbc, "Existencias", txtStock);
-        gbc.gridy++;
-        gbc.weighty = 1;
-        panel.add(new JLabel(), gbc);
-        gbc.gridy++;
-        gbc.weighty = 0;
-        gbc.insets = new Insets(12, 0, 0, 0);
-        panel.add(botones, gbc);
+        GridBagConstraints gbcLblModo = new GridBagConstraints();
+        gbcLblModo.gridx = 0;
+        gbcLblModo.gridy = 0;
+        gbcLblModo.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblModo.weightx = 1;
+        gbcLblModo.insets = new Insets(0, 0, 18, 0);
+        panel.add(lblModo, gbcLblModo);
+
+        GridBagConstraints gbcLblProducto = new GridBagConstraints();
+        gbcLblProducto.gridx = 0;
+        gbcLblProducto.gridy = 1;
+        gbcLblProducto.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblProducto.weightx = 1;
+        gbcLblProducto.insets = new Insets(0, 0, 6, 0);
+        panel.add(lblProducto, gbcLblProducto);
+
+        GridBagConstraints gbcTxtNombre = new GridBagConstraints();
+        gbcTxtNombre.gridx = 0;
+        gbcTxtNombre.gridy = 2;
+        gbcTxtNombre.fill = GridBagConstraints.HORIZONTAL;
+        gbcTxtNombre.weightx = 1;
+        gbcTxtNombre.insets = new Insets(0, 0, 14, 0);
+        panel.add(txtNombre, gbcTxtNombre);
+
+        GridBagConstraints gbcLblPrecio = new GridBagConstraints();
+        gbcLblPrecio.gridx = 0;
+        gbcLblPrecio.gridy = 3;
+        gbcLblPrecio.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblPrecio.weightx = 1;
+        gbcLblPrecio.insets = new Insets(0, 0, 6, 0);
+        panel.add(lblPrecio, gbcLblPrecio);
+
+        GridBagConstraints gbcTxtPrecio = new GridBagConstraints();
+        gbcTxtPrecio.gridx = 0;
+        gbcTxtPrecio.gridy = 4;
+        gbcTxtPrecio.fill = GridBagConstraints.HORIZONTAL;
+        gbcTxtPrecio.weightx = 1;
+        gbcTxtPrecio.insets = new Insets(0, 0, 14, 0);
+        panel.add(txtPrecio, gbcTxtPrecio);
+
+        GridBagConstraints gbcLblExistencias = new GridBagConstraints();
+        gbcLblExistencias.gridx = 0;
+        gbcLblExistencias.gridy = 5;
+        gbcLblExistencias.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblExistencias.weightx = 1;
+        gbcLblExistencias.insets = new Insets(0, 0, 6, 0);
+        panel.add(lblExistencias, gbcLblExistencias);
+
+        GridBagConstraints gbcTxtStock = new GridBagConstraints();
+        gbcTxtStock.gridx = 0;
+        gbcTxtStock.gridy = 6;
+        gbcTxtStock.fill = GridBagConstraints.HORIZONTAL;
+        gbcTxtStock.weightx = 1;
+        gbcTxtStock.insets = new Insets(0, 0, 14, 0);
+        panel.add(txtStock, gbcTxtStock);
+
+        GridBagConstraints gbcSeparador = new GridBagConstraints();
+        gbcSeparador.gridx = 0;
+        gbcSeparador.gridy = 7;
+        gbcSeparador.fill = GridBagConstraints.HORIZONTAL;
+        gbcSeparador.weightx = 1;
+        gbcSeparador.weighty = 1;
+        panel.add(separador, gbcSeparador);
+
+        GridBagConstraints gbcBotones = new GridBagConstraints();
+        gbcBotones.gridx = 0;
+        gbcBotones.gridy = 8;
+        gbcBotones.fill = GridBagConstraints.HORIZONTAL;
+        gbcBotones.weightx = 1;
+        gbcBotones.insets = new Insets(12, 0, 0, 0);
+        panel.add(botones, gbcBotones);
 
         return panel;
-    }
-
-    private void agregarCampo(JPanel panel, GridBagConstraints gbc, String etiqueta, JTextField campo) {
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 6, 0);
-        panel.add(UiFactory.etiqueta(etiqueta), gbc);
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 14, 0);
-        panel.add(campo, gbc);
     }
 
     // Agrega un producto nuevo validando numeros y duplicados.

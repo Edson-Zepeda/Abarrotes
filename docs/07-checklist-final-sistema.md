@@ -120,4 +120,6 @@ Este checklist resume el estado final del sistema despues de los ajustes solicit
 - [x] No queda el texto de acceso restringido que se pidio quitar.
 - [x] Login listo para abrir y editar en Eclipse WindowBuilder.
 - [x] Proyecto listo para importar en Eclipse como `Abarrotes`.
+- [x] Vistas principales corregidas para WindowBuilder sin reutilizar `GridBagConstraints`.
+- [x] `ClienteView`, `InventarioView`, `ProveedorView`, `UsuarioView` y `VentaView` sin error de doble asociacion `gbc`.
 - [x] Proyecto listo para entrega.

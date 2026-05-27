@@ -121,35 +121,84 @@ public class ClienteView extends JDialog {
         botones.add(btnLimpiar);
         botones.add(btnBorrar);
 
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.weightx = 1;
+        JLabel lblNumeroCliente = UiFactory.etiqueta("Numero de Cliente");
+        JLabel lblNombre = UiFactory.etiqueta("Nombre");
+        JLabel lblTelefono = UiFactory.etiqueta("Telefono");
+        JLabel separador = new JLabel();
 
-        gbc.gridy = 0;
-        gbc.insets = new Insets(0, 0, 18, 0);
-        panel.add(lblModo, gbc);
-        agregarCampo(panel, gbc, "Numero de Cliente", txtId);
-        agregarCampo(panel, gbc, "Nombre", txtNombre);
-        agregarCampo(panel, gbc, "Telefono", txtTel);
-        gbc.gridy++;
-        gbc.weighty = 1;
-        panel.add(new JLabel(), gbc);
-        gbc.gridy++;
-        gbc.weighty = 0;
-        gbc.insets = new Insets(12, 0, 0, 0);
-        panel.add(botones, gbc);
+        GridBagConstraints gbcLblModo = new GridBagConstraints();
+        gbcLblModo.gridx = 0;
+        gbcLblModo.gridy = 0;
+        gbcLblModo.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblModo.weightx = 1;
+        gbcLblModo.insets = new Insets(0, 0, 18, 0);
+        panel.add(lblModo, gbcLblModo);
+
+        GridBagConstraints gbcLblNumeroCliente = new GridBagConstraints();
+        gbcLblNumeroCliente.gridx = 0;
+        gbcLblNumeroCliente.gridy = 1;
+        gbcLblNumeroCliente.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblNumeroCliente.weightx = 1;
+        gbcLblNumeroCliente.insets = new Insets(0, 0, 6, 0);
+        panel.add(lblNumeroCliente, gbcLblNumeroCliente);
+
+        GridBagConstraints gbcTxtId = new GridBagConstraints();
+        gbcTxtId.gridx = 0;
+        gbcTxtId.gridy = 2;
+        gbcTxtId.fill = GridBagConstraints.HORIZONTAL;
+        gbcTxtId.weightx = 1;
+        gbcTxtId.insets = new Insets(0, 0, 14, 0);
+        panel.add(txtId, gbcTxtId);
+
+        GridBagConstraints gbcLblNombre = new GridBagConstraints();
+        gbcLblNombre.gridx = 0;
+        gbcLblNombre.gridy = 3;
+        gbcLblNombre.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblNombre.weightx = 1;
+        gbcLblNombre.insets = new Insets(0, 0, 6, 0);
+        panel.add(lblNombre, gbcLblNombre);
+
+        GridBagConstraints gbcTxtNombre = new GridBagConstraints();
+        gbcTxtNombre.gridx = 0;
+        gbcTxtNombre.gridy = 4;
+        gbcTxtNombre.fill = GridBagConstraints.HORIZONTAL;
+        gbcTxtNombre.weightx = 1;
+        gbcTxtNombre.insets = new Insets(0, 0, 14, 0);
+        panel.add(txtNombre, gbcTxtNombre);
+
+        GridBagConstraints gbcLblTelefono = new GridBagConstraints();
+        gbcLblTelefono.gridx = 0;
+        gbcLblTelefono.gridy = 5;
+        gbcLblTelefono.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblTelefono.weightx = 1;
+        gbcLblTelefono.insets = new Insets(0, 0, 6, 0);
+        panel.add(lblTelefono, gbcLblTelefono);
+
+        GridBagConstraints gbcTxtTel = new GridBagConstraints();
+        gbcTxtTel.gridx = 0;
+        gbcTxtTel.gridy = 6;
+        gbcTxtTel.fill = GridBagConstraints.HORIZONTAL;
+        gbcTxtTel.weightx = 1;
+        gbcTxtTel.insets = new Insets(0, 0, 14, 0);
+        panel.add(txtTel, gbcTxtTel);
+
+        GridBagConstraints gbcSeparador = new GridBagConstraints();
+        gbcSeparador.gridx = 0;
+        gbcSeparador.gridy = 7;
+        gbcSeparador.fill = GridBagConstraints.HORIZONTAL;
+        gbcSeparador.weightx = 1;
+        gbcSeparador.weighty = 1;
+        panel.add(separador, gbcSeparador);
+
+        GridBagConstraints gbcBotones = new GridBagConstraints();
+        gbcBotones.gridx = 0;
+        gbcBotones.gridy = 8;
+        gbcBotones.fill = GridBagConstraints.HORIZONTAL;
+        gbcBotones.weightx = 1;
+        gbcBotones.insets = new Insets(12, 0, 0, 0);
+        panel.add(botones, gbcBotones);
 
         return panel;
-    }
-
-    private void agregarCampo(JPanel panel, GridBagConstraints gbc, String etiqueta, JTextField campo) {
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 6, 0);
-        panel.add(UiFactory.etiqueta(etiqueta), gbc);
-        gbc.gridy++;
-        gbc.insets = new Insets(0, 0, 14, 0);
-        panel.add(campo, gbc);
     }
 
     // Agrega clientes validando que no falten datos ni se repita el numero.
