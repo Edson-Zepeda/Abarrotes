@@ -69,11 +69,11 @@ public class MenuPrincipal extends JFrame {
 
         JLabel titulo = new JLabel("Abarrotes");
         titulo.setFont(AppTheme.fuenteNegrita(24));
-        titulo.setForeground(AppTheme.TEXTO);
+        titulo.setForeground(Color.WHITE);
 
         JLabel usuario = new JLabel("Rol actual: " + rol);
         usuario.setFont(AppTheme.fuenteNegrita(13));
-        usuario.setForeground(AppTheme.TEXTO_SUAVE);
+        usuario.setForeground(Color.WHITE);
         usuario.setHorizontalAlignment(SwingConstants.RIGHT);
 
         panel.add(titulo, BorderLayout.WEST);

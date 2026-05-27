@@ -51,8 +51,10 @@ Este checklist resume el estado final del sistema despues de los ajustes solicit
 - [x] Textos visibles revisados para ser claros y breves.
 - [x] Se retiro la palabra tecnica innecesaria de las pantallas.
 - [x] Se quitaron textos descriptivos sobrantes.
-- [x] Fondos generales, encabezados, barras laterales, bordes y tablas regresados al rojo institucional.
-- [x] Grises reservados para botones uniformes con texto oscuro.
+- [x] Paneles de trabajo en blanco para mejor lectura.
+- [x] Encabezados, barras laterales, bordes y tablas con rojo institucional.
+- [x] Texto blanco sobre fondos rojos.
+- [x] Botones y barra de busqueda con fondo blanco y texto negro.
 - [x] El boton `Usuarios` conserva su nombre aunque el rol empleado no pueda abrirlo.
 - [x] Login editable desde la pestaña `Design` de Eclipse.
 - [x] Login sin `GridBagLayout`, sin `UiFactory`, sin `AppTheme` y sin metodo auxiliar de restricciones.

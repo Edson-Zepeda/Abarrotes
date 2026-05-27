@@ -25,14 +25,14 @@ public class LoginView extends JFrame {
     private static final Color ROJO = new Color(198, 40, 40);
     private static final Color ROJO_OSCURO = new Color(142, 27, 27);
     private static final Color AMARILLO = new Color(249, 200, 70);
-    private static final Color FONDO = ROJO;
+    private static final Color FONDO = Color.WHITE;
     private static final Color SUPERFICIE = Color.WHITE;
     private static final Color BORDE = ROJO_OSCURO;
-    private static final Color TEXTO = new Color(31, 41, 51);
+    private static final Color TEXTO = Color.BLACK;
     private static final Color TEXTO_SUAVE = new Color(102, 112, 133);
     private static final Color PELIGRO = new Color(179, 38, 30);
-    private static final Color BOTON_FONDO = new Color(229, 233, 240);
-    private static final Color BOTON_BORDE = new Color(188, 198, 211);
+    private static final Color BOTON_FONDO = Color.WHITE;
+    private static final Color BOTON_BORDE = ROJO_OSCURO;
 
     private JPanel contentPane;
     private JPanel panelMarca;
@@ -73,13 +73,13 @@ public class LoginView extends JFrame {
 
         lblSistema = new JLabel("ABARROTES");
         lblSistema.setFont(new Font("Segoe UI", Font.BOLD, 34));
-        lblSistema.setForeground(TEXTO);
+        lblSistema.setForeground(Color.WHITE);
         lblSistema.setBounds(34, 185, 260, 45);
         panelMarca.add(lblSistema);
 
         lblEquipo = new JLabel("Equipo 6");
         lblEquipo.setFont(new Font("Segoe UI", Font.PLAIN, 18));
-        lblEquipo.setForeground(TEXTO_SUAVE);
+        lblEquipo.setForeground(Color.WHITE);
         lblEquipo.setBounds(36, 236, 220, 26);
         panelMarca.add(lblEquipo);
 

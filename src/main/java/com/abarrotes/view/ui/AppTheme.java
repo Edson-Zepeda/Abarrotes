@@ -25,14 +25,14 @@ public class AppTheme {
     public static final Color AMARILLO = new Color(249, 200, 70);
     public static final Color VERDE = new Color(46, 125, 50);
     public static final Color PELIGRO = new Color(179, 38, 30);
-    public static final Color FONDO = ROJO;
+    public static final Color FONDO = Color.WHITE;
     public static final Color SUPERFICIE = Color.WHITE;
     public static final Color BORDE = ROJO_OSCURO;
-    public static final Color TEXTO = new Color(31, 41, 51);
+    public static final Color TEXTO = Color.BLACK;
     public static final Color TEXTO_SUAVE = new Color(102, 112, 133);
-    public static final Color GRIS_TABLA = new Color(255, 245, 245);
-    public static final Color BOTON_FONDO = new Color(229, 233, 240);
-    public static final Color BOTON_BORDE = new Color(188, 198, 211);
+    public static final Color GRIS_TABLA = Color.WHITE;
+    public static final Color BOTON_FONDO = Color.WHITE;
+    public static final Color BOTON_BORDE = ROJO_OSCURO;
 
     private static final Font FUENTE = new Font("Segoe UI", Font.PLAIN, 13);
     private static final NumberFormat MONEDA = NumberFormat.getCurrencyInstance(Locale.forLanguageTag("es-MX"));
@@ -93,7 +93,7 @@ public class AppTheme {
         tabla.setFillsViewportHeight(true);
         tabla.getTableHeader().setFont(fuenteNegrita(12));
         tabla.getTableHeader().setBackground(ROJO_OSCURO);
-        tabla.getTableHeader().setForeground(TEXTO);
+        tabla.getTableHeader().setForeground(Color.WHITE);
         tabla.getTableHeader().setReorderingAllowed(false);
     }
 

@@ -37,7 +37,7 @@ public class UiFactory {
 
         JLabel lblTitulo = new JLabel(titulo);
         lblTitulo.setFont(AppTheme.fuenteNegrita(22));
-        lblTitulo.setForeground(AppTheme.TEXTO);
+        lblTitulo.setForeground(Color.WHITE);
 
         JPanel textos = new JPanel(new BorderLayout(0, 3));
         textos.setOpaque(false);
@@ -45,7 +45,7 @@ public class UiFactory {
         if (subtitulo != null && !subtitulo.trim().isEmpty()) {
             JLabel lblSubtitulo = new JLabel(subtitulo);
             lblSubtitulo.setFont(AppTheme.fuenteNormal(12));
-            lblSubtitulo.setForeground(AppTheme.TEXTO_SUAVE);
+            lblSubtitulo.setForeground(Color.WHITE);
             textos.add(lblSubtitulo, BorderLayout.SOUTH);
         }
 
@@ -61,7 +61,7 @@ public class UiFactory {
     public static JLabel etiqueta(String texto) {
         JLabel label = new JLabel(texto);
         label.setFont(AppTheme.fuenteNegrita(12));
-        label.setForeground(AppTheme.TEXTO_SUAVE);
+        label.setForeground(AppTheme.TEXTO);
         return label;
     }
 
@@ -148,14 +148,14 @@ public class UiFactory {
 
     public static JPanel barraBusqueda(JTextField txtBuscar, JButton btnLimpiar, JLabel lblRegistros) {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 8, 0));
-        panel.setBackground(AppTheme.FONDO);
+        panel.setBackground(AppTheme.SUPERFICIE);
         panel.add(etiqueta("Buscar"));
         txtBuscar.setPreferredSize(new Dimension(260, 36));
         panel.add(txtBuscar);
         panel.add(btnLimpiar);
         lblRegistros.setHorizontalAlignment(SwingConstants.LEFT);
         lblRegistros.setFont(AppTheme.fuenteNegrita(12));
-        lblRegistros.setForeground(AppTheme.TEXTO_SUAVE);
+        lblRegistros.setForeground(AppTheme.TEXTO);
         panel.add(lblRegistros);
         return panel;
     }
