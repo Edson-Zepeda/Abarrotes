@@ -25,7 +25,7 @@ public class LoginView extends JFrame {
     private static final Color ROJO = new Color(198, 40, 40);
     private static final Color ROJO_OSCURO = new Color(142, 27, 27);
     private static final Color AMARILLO = new Color(249, 200, 70);
-    private static final Color FONDO = new Color(245, 246, 247);
+    private static final Color FONDO = ROJO;
     private static final Color SUPERFICIE = Color.WHITE;
     private static final Color BORDE = ROJO_OSCURO;
     private static final Color TEXTO = new Color(31, 41, 51);

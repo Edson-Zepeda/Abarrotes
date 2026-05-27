@@ -25,12 +25,12 @@ public class AppTheme {
     public static final Color AMARILLO = new Color(249, 200, 70);
     public static final Color VERDE = new Color(46, 125, 50);
     public static final Color PELIGRO = new Color(179, 38, 30);
-    public static final Color FONDO = new Color(245, 246, 247);
+    public static final Color FONDO = ROJO;
     public static final Color SUPERFICIE = Color.WHITE;
     public static final Color BORDE = ROJO_OSCURO;
     public static final Color TEXTO = new Color(31, 41, 51);
     public static final Color TEXTO_SUAVE = new Color(102, 112, 133);
-    public static final Color GRIS_TABLA = new Color(248, 249, 250);
+    public static final Color GRIS_TABLA = new Color(255, 245, 245);
     public static final Color BOTON_FONDO = new Color(229, 233, 240);
     public static final Color BOTON_BORDE = new Color(188, 198, 211);
 

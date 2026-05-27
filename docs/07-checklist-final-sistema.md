@@ -51,7 +51,7 @@ Este checklist resume el estado final del sistema despues de los ajustes solicit
 - [x] Textos visibles revisados para ser claros y breves.
 - [x] Se retiro la palabra tecnica innecesaria de las pantallas.
 - [x] Se quitaron textos descriptivos sobrantes.
-- [x] Encabezados, barras laterales, bordes y tablas regresados al rojo institucional.
+- [x] Fondos generales, encabezados, barras laterales, bordes y tablas regresados al rojo institucional.
 - [x] Grises reservados para botones uniformes con texto oscuro.
 - [x] El boton `Usuarios` conserva su nombre aunque el rol empleado no pueda abrirlo.
 - [x] Login editable desde la pestaña `Design` de Eclipse.
