@@ -1,0 +1,389 @@
+package com.abarrotes.view;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Insets;
+import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.table.DefaultTableCellRenderer;
+import com.abarrotes.model.Producto;
+import com.abarrotes.view.ui.AppTheme;
+import com.abarrotes.view.ui.IconoApp;
+import com.abarrotes.view.ui.NonEditableTableModel;
+import com.abarrotes.view.ui.UiFactory;
+
+/**
+ * Esta ventana es el "Almacen Digital".
+ * Aqui es donde el equipo registra que productos vende la tienda y cuanta mercancia queda.
+ */
+
+public class InventarioView extends JDialog {
+    // Estas son las herramientas de la ventana: la tabla para ver todo y los cuadros para escribir.
+    private NonEditableTableModel modelo;
+    private JTable tabla;
+    private JTextField txtNombre, txtPrecio, txtStock, txtBuscar;
+    private JLabel lblRegistros, lblModo;
+    private JButton btnModificar, btnBorrar;
+    private ArrayList<Producto> listaProductos;
+    private ArrayList<Producto> listaFiltrada = new ArrayList<>();
+
+    public InventarioView(JFrame parent, ArrayList<Producto> listaProductos) {
+        super(parent, "Inventario - Abarrotes", true);
+        IconoApp.aplicar(this);
+        this.listaProductos = listaProductos;
+        setSize(1040, 680);
+        setMinimumSize(new Dimension(960, 620));
+        setLocationRelativeTo(parent);
+        setLayout(new BorderLayout());
+
+        add(UiFactory.encabezado("Inventario", ""), BorderLayout.NORTH);
+        add(crearContenido(), BorderLayout.CENTER);
+
+        actualizarTabla();
+        actualizarEstadoBotones();
+    }
+
+    private JPanel crearContenido() {
+        JPanel panel = UiFactory.panelBase();
+
+        txtBuscar = UiFactory.campoTexto();
+        JButton btnLimpiarBusqueda = UiFactory.botonClaro("Limpiar");
+        lblRegistros = new JLabel();
+        JPanel barraBusqueda = UiFactory.barraBusqueda(txtBuscar, btnLimpiarBusqueda, lblRegistros);
+
+        modelo = new NonEditableTableModel(new Object[]{"Producto", "Precio", "Existencias"}, 0);
+        tabla = new JTable(modelo);
+        tabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        AppTheme.configurarTabla(tabla);
+        tabla.getColumnModel().getColumn(1).setCellRenderer(AppTheme.rendererMoneda());
+        tabla.getColumnModel().getColumn(2).setCellRenderer(new StockRenderer());
+
+        JPanel cuerpo = new JPanel(new BorderLayout(12, 0));
+        cuerpo.setBackground(AppTheme.FONDO);
+        cuerpo.add(new JScrollPane(tabla), BorderLayout.CENTER);
+        cuerpo.add(crearFormulario(), BorderLayout.EAST);
+
+        JButton btnCerrar = UiFactory.botonClaro("Regresar al menu");
+        btnCerrar.addActionListener(e -> dispose());
+
+        panel.add(barraBusqueda, BorderLayout.NORTH);
+        panel.add(cuerpo, BorderLayout.CENTER);
+        panel.add(btnCerrar, BorderLayout.SOUTH);
+
+        txtBuscar.getDocument().addDocumentListener(new DocumentListener() {
+            public void insertUpdate(DocumentEvent e) { actualizarTabla(); }
+            public void removeUpdate(DocumentEvent e) { actualizarTabla(); }
+            public void changedUpdate(DocumentEvent e) { actualizarTabla(); }
+        });
+        btnLimpiarBusqueda.addActionListener(e -> txtBuscar.setText(""));
+        tabla.getSelectionModel().addListSelectionListener(e -> {
+            if (!e.getValueIsAdjusting()) {
+                cargarSeleccion();
+            }
+        });
+
+        return panel;
+    }
+
+    private JPanel crearFormulario() {
+        JPanel panel = new JPanel(new GridBagLayout());
+        panel.setPreferredSize(new Dimension(325, 0));
+        panel.setBackground(AppTheme.SUPERFICIE);
+        panel.setBorder(AppTheme.bordeTarjeta());
+
+        lblModo = UiFactory.tituloPanel("Nuevo producto");
+        txtNombre = UiFactory.campoTexto();
+        txtPrecio = UiFactory.campoTexto();
+        txtStock = UiFactory.campoTexto();
+
+        JButton btnAgregar = UiFactory.botonPrimario("Agregar");
+        btnModificar = UiFactory.botonSecundario("Guardar cambios");
+        JButton btnLimpiar = UiFactory.botonClaro("Limpiar");
+        btnBorrar = UiFactory.botonPeligro("Eliminar");
+
+        btnAgregar.addActionListener(e -> agregarProducto());
+        btnModificar.addActionListener(e -> modificarProducto());
+        btnLimpiar.addActionListener(e -> limpiarCampos());
+        btnBorrar.addActionListener(e -> borrarProducto());
+
+        JPanel botones = new JPanel(new GridLayout(4, 1, 0, 8));
+        botones.setBackground(AppTheme.SUPERFICIE);
+        botones.add(btnAgregar);
+        botones.add(btnModificar);
+        botones.add(btnLimpiar);
+        botones.add(btnBorrar);
+
+        JLabel lblProducto = UiFactory.etiqueta("Producto");
+        JLabel lblPrecio = UiFactory.etiqueta("Precio");
+        JLabel lblExistencias = UiFactory.etiqueta("Existencias");
+        JLabel separador = new JLabel();
+
+        GridBagConstraints gbcLblModo = new GridBagConstraints();
+        gbcLblModo.gridx = 0;
+        gbcLblModo.gridy = 0;
+        gbcLblModo.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblModo.weightx = 1;
+        gbcLblModo.insets = new Insets(0, 0, 18, 0);
+        panel.add(lblModo, gbcLblModo);
+
+        GridBagConstraints gbcLblProducto = new GridBagConstraints();
+        gbcLblProducto.gridx = 0;
+        gbcLblProducto.gridy = 1;
+        gbcLblProducto.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblProducto.weightx = 1;
+        gbcLblProducto.insets = new Insets(0, 0, 6, 0);
+        panel.add(lblProducto, gbcLblProducto);
+
+        GridBagConstraints gbcTxtNombre = new GridBagConstraints();
+        gbcTxtNombre.gridx = 0;
+        gbcTxtNombre.gridy = 2;
+        gbcTxtNombre.fill = GridBagConstraints.HORIZONTAL;
+        gbcTxtNombre.weightx = 1;
+        gbcTxtNombre.insets = new Insets(0, 0, 14, 0);
+        panel.add(txtNombre, gbcTxtNombre);
+
+        GridBagConstraints gbcLblPrecio = new GridBagConstraints();
+        gbcLblPrecio.gridx = 0;
+        gbcLblPrecio.gridy = 3;
+        gbcLblPrecio.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblPrecio.weightx = 1;
+        gbcLblPrecio.insets = new Insets(0, 0, 6, 0);
+        panel.add(lblPrecio, gbcLblPrecio);
+
+        GridBagConstraints gbcTxtPrecio = new GridBagConstraints();
+        gbcTxtPrecio.gridx = 0;
+        gbcTxtPrecio.gridy = 4;
+        gbcTxtPrecio.fill = GridBagConstraints.HORIZONTAL;
+        gbcTxtPrecio.weightx = 1;
+        gbcTxtPrecio.insets = new Insets(0, 0, 14, 0);
+        panel.add(txtPrecio, gbcTxtPrecio);
+
+        GridBagConstraints gbcLblExistencias = new GridBagConstraints();
+        gbcLblExistencias.gridx = 0;
+        gbcLblExistencias.gridy = 5;
+        gbcLblExistencias.fill = GridBagConstraints.HORIZONTAL;
+        gbcLblExistencias.weightx = 1;
+        gbcLblExistencias.insets = new Insets(0, 0, 6, 0);
+        panel.add(lblExistencias, gbcLblExistencias);
+
+        GridBagConstraints gbcTxtStock = new GridBagConstraints();
+        gbcTxtStock.gridx = 0;
+        gbcTxtStock.gridy = 6;
+        gbcTxtStock.fill = GridBagConstraints.HORIZONTAL;
+        gbcTxtStock.weightx = 1;
+        gbcTxtStock.insets = new Insets(0, 0, 14, 0);
+        panel.add(txtStock, gbcTxtStock);
+
+        GridBagConstraints gbcSeparador = new GridBagConstraints();
+        gbcSeparador.gridx = 0;
+        gbcSeparador.gridy = 7;
+        gbcSeparador.fill = GridBagConstraints.HORIZONTAL;
+        gbcSeparador.weightx = 1;
+        gbcSeparador.weighty = 1;
+        panel.add(separador, gbcSeparador);
+
+        GridBagConstraints gbcBotones = new GridBagConstraints();
+        gbcBotones.gridx = 0;
+        gbcBotones.gridy = 8;
+        gbcBotones.fill = GridBagConstraints.HORIZONTAL;
+        gbcBotones.weightx = 1;
+        gbcBotones.insets = new Insets(12, 0, 0, 0);
+        panel.add(botones, gbcBotones);
+
+        return panel;
+    }
+
+    // Agrega un producto nuevo validando numeros y duplicados.
+    private void agregarProducto() {
+        Producto producto = leerProductoFormulario();
+        if (producto == null) {
+            return;
+        }
+        if (buscarProductoPorNombre(producto.getNombre()) != null) {
+            JOptionPane.showMessageDialog(this, "Ya existe un producto con ese nombre");
+            return;
+        }
+
+        listaProductos.add(producto);
+        actualizarTabla();
+        seleccionarProducto(producto);
+        limpiarCampos();
+    }
+
+    // Modifica el producto seleccionado.
+    private void modificarProducto() {
+        Producto seleccionado = obtenerProductoSeleccionado();
+        if (seleccionado == null) {
+            JOptionPane.showMessageDialog(this, "Selecciona un producto de la tabla");
+            return;
+        }
+
+        Producto datos = leerProductoFormulario();
+        if (datos == null) {
+            return;
+        }
+
+        Producto repetido = buscarProductoPorNombre(datos.getNombre());
+        if (repetido != null && repetido != seleccionado) {
+            JOptionPane.showMessageDialog(this, "Ya existe otro producto con ese nombre");
+            return;
+        }
+
+        seleccionado.setNombre(datos.getNombre());
+        seleccionado.setPrecio(datos.getPrecio());
+        seleccionado.setStock(datos.getStock());
+        actualizarTabla();
+        limpiarCampos();
+    }
+
+    // Borra el producto seleccionado con confirmacion.
+    private void borrarProducto() {
+        Producto seleccionado = obtenerProductoSeleccionado();
+        if (seleccionado == null) {
+            JOptionPane.showMessageDialog(this, "Selecciona un producto de la tabla");
+            return;
+        }
+
+        int respuesta = JOptionPane.showConfirmDialog(this, "Deseas borrar este producto?", "Confirmar", JOptionPane.YES_NO_OPTION);
+        if (respuesta == JOptionPane.YES_OPTION) {
+            listaProductos.remove(seleccionado);
+            actualizarTabla();
+            limpiarCampos();
+        }
+    }
+
+    // Lee y valida los datos del formulario.
+    private Producto leerProductoFormulario() {
+        String nombre = txtNombre.getText().trim();
+        String precioTexto = txtPrecio.getText().trim();
+        String stockTexto = txtStock.getText().trim();
+
+        if (nombre.isEmpty() || precioTexto.isEmpty() || stockTexto.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor llena todos los campos");
+            return null;
+        }
+
+        try {
+            double precio = Double.parseDouble(precioTexto);
+            int stock = Integer.parseInt(stockTexto);
+            if (precio < 0 || stock < 0) {
+                JOptionPane.showMessageDialog(this, "Precio y existencias no pueden ser negativos");
+                return null;
+            }
+            return new Producto(nombre, precio, stock);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Precio y existencias deben ser numeros validos");
+            return null;
+        }
+    }
+
+    // Metodo para llenar la tabla con filtro de busqueda.
+    private void actualizarTabla() {
+        modelo.setRowCount(0);
+        listaFiltrada.clear();
+        String busqueda = txtBuscar == null ? "" : txtBuscar.getText().trim().toLowerCase();
+
+        if (listaProductos != null) {
+            for (Producto p : listaProductos) {
+                if (busqueda.isEmpty()
+                        || p.getNombre().toLowerCase().contains(busqueda)
+                        || String.valueOf(p.getPrecio()).contains(busqueda)
+                        || String.valueOf(p.getStock()).contains(busqueda)) {
+                    listaFiltrada.add(p);
+                    modelo.addRow(new Object[]{p.getNombre(), p.getPrecio(), p.getStock()});
+                }
+            }
+        }
+        lblRegistros.setText(listaFiltrada.size() + " registros");
+        actualizarEstadoBotones();
+    }
+
+    private void cargarSeleccion() {
+        Producto producto = obtenerProductoSeleccionado();
+        if (producto != null) {
+            txtNombre.setText(producto.getNombre());
+            txtPrecio.setText(String.valueOf(producto.getPrecio()));
+            txtStock.setText(String.valueOf(producto.getStock()));
+            lblModo.setText("Editar producto");
+        }
+        actualizarEstadoBotones();
+    }
+
+    private Producto obtenerProductoSeleccionado() {
+        int fila = tabla.getSelectedRow();
+        if (fila >= 0 && fila < listaFiltrada.size()) {
+            return listaFiltrada.get(fila);
+        }
+        return null;
+    }
+
+    private Producto buscarProductoPorNombre(String nombre) {
+        for (Producto p : listaProductos) {
+            if (p.getNombre().equalsIgnoreCase(nombre)) {
+                return p;
+            }
+        }
+        return null;
+    }
+
+    private void seleccionarProducto(Producto producto) {
+        int index = listaFiltrada.indexOf(producto);
+        if (index >= 0) {
+            tabla.setRowSelectionInterval(index, index);
+        }
+    }
+
+    private void limpiarCampos() {
+        tabla.clearSelection();
+        txtNombre.setText("");
+        txtPrecio.setText("");
+        txtStock.setText("");
+        lblModo.setText("Nuevo producto");
+        actualizarEstadoBotones();
+    }
+
+    private void actualizarEstadoBotones() {
+        boolean haySeleccion = tabla != null && tabla.getSelectedRow() >= 0;
+        if (btnModificar != null) {
+            btnModificar.setEnabled(haySeleccion);
+        }
+        if (btnBorrar != null) {
+            btnBorrar.setEnabled(haySeleccion);
+        }
+    }
+
+    // Colorea existencias bajas para que el cajero las detecte rapido.
+    private class StockRenderer extends DefaultTableCellRenderer {
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
+                boolean hasFocus, int row, int column) {
+            super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+            setHorizontalAlignment(CENTER);
+            if (!isSelected) {
+                setForeground(AppTheme.TEXTO);
+                setBackground(row % 2 == 0 ? AppTheme.SUPERFICIE : AppTheme.GRIS_TABLA);
+                if (value instanceof Integer && ((Integer) value) <= 10) {
+                    setForeground(AppTheme.TEXTO);
+                    setBackground(new Color(255, 238, 235));
+                }
+            }
+            return this;
+        }
+    }
+}
