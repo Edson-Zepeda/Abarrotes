@@ -23,7 +23,7 @@ import com.abarrotes.view.ui.UiFactory;
 
 /**
  * Esta ventana es el "Reporte Final".
- * Su unica funcion es sumar todas las ventas que se hicieron y mostrarlas ordenadas.
+ * Su única función es sumar todas las ventas que se hicieron y mostrarlas ordenadas.
  */
 
 public class CorteCajaView extends JDialog {
@@ -56,7 +56,7 @@ public class CorteCajaView extends JDialog {
         resumen.add(crearTarjeta("Operaciones", lblNumVentas, AppTheme.ROJO));
         resumen.add(crearTarjeta("Ticket promedio", lblPromedio, AppTheme.TEXTO));
 
-        modelo = new NonEditableTableModel(new Object[]{"Numero de Venta", "Hora", "Cliente", "Total"}, 0);
+        modelo = new NonEditableTableModel(new Object[]{"Número de Venta", "Hora", "Cliente", "Total"}, 0);
         JTable tabla = new JTable(modelo);
         AppTheme.configurarTabla(tabla);
         tabla.getColumnModel().getColumn(3).setCellRenderer(AppTheme.rendererMoneda());
@@ -71,7 +71,7 @@ public class CorteCajaView extends JDialog {
         centro.add(lblVacio, BorderLayout.SOUTH);
 
         JButton btnImprimir = UiFactory.botonPrimario("Imprimir corte PDF");
-        JButton btnVolver = UiFactory.botonClaro("Regresar al menu");
+        JButton btnVolver = UiFactory.botonClaro("Regresar al menú");
         btnImprimir.addActionListener(e -> imprimirCortePdf());
         btnVolver.addActionListener(e -> dispose());
 
@@ -103,7 +103,7 @@ public class CorteCajaView extends JDialog {
     }
 
     /**
-     * Esta es la funcion "calculadora".
+     * Esta es la función "calculadora".
      * Va a la lista general del programa (Main.ventasDelDia), suma venta por venta
      * y los anota en la tabla que ve el usuario.
      */

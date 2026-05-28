@@ -2,7 +2,7 @@
 
 Proyecto: Sistema de Abarrotes Mejorado - Equipo 6
 
-Este checklist resume el estado final del sistema despues de los ajustes solicitados. Sirve como revision previa para entregar el ZIP, importar en Eclipse y hacer la demostracion.
+Este checklist resume el estado final del sistema después de los ajustes solicitados. Sirve como revisión previa para entregar el ZIP, importar en Eclipse y hacer la demostración.
 
 ## Entrega principal
 
@@ -11,14 +11,14 @@ Este checklist resume el estado final del sistema despues de los ajustes solicit
 - [x] ZIP final generado en `C:\Users\Lenovo\Downloads\abarrotes 2\Abarrotes_Eclipse_Final.zip`.
 - [x] ZIP con archivo `.project` para Eclipse.
 - [x] ZIP con archivo `.classpath` para Eclipse.
-- [x] ZIP con librerias necesarias en `lib`.
-- [x] ZIP sin `.class`, base de datos generada, carpetas de compilacion ni basura de IDE.
+- [x] ZIP con librerías necesarias en `lib`.
+- [x] ZIP sin `.class`, base de datos generada, carpetas de compilación ni basura de IDE.
 - [x] Repositorio de GitHub actualizado en la rama de trabajo.
 
 ## Alcance final del sistema
 
 - [x] Login.
-- [x] Menu principal.
+- [x] Menú principal.
 - [x] Inventario.
 - [x] Clientes.
 - [x] Proveedores.
@@ -27,7 +27,7 @@ Este checklist resume el estado final del sistema despues de los ajustes solicit
 - [x] Usuarios.
 - [x] Dashboard principal.
 - [x] Datos iniciales con 30 productos.
-- [x] Catalogo retirado por solicitud final eliminado del menu, codigo y documentacion.
+- [x] Catálogo retirado por solicitud final eliminado del menú, código y documentación.
 
 ## Base de datos y acceso
 
@@ -43,52 +43,52 @@ Este checklist resume el estado final del sistema despues de los ajustes solicit
 
 ## Interfaz y experiencia
 
-- [x] Rediseño visual mas profesional.
+- [x] Rediseño visual más profesional.
 - [x] Estilo consistente en ventanas principales.
-- [x] Menu lateral para navegar entre secciones.
-- [x] Boton `Cerrar sesion` en el menu principal.
-- [x] Botones de regreso al menu en las secciones.
+- [x] Menú lateral para navegar entre secciones.
+- [x] Botón `Cerrar sesión` en el menú principal.
+- [x] Botones de regreso al menú en las secciones.
 - [x] Textos visibles revisados para ser claros y breves.
-- [x] Se retiro la palabra tecnica innecesaria de las pantallas.
+- [x] Se retiró la palabra técnica innecesaria de las pantallas.
 - [x] Se quitaron textos descriptivos sobrantes.
 - [x] Paneles de trabajo en blanco para mejor lectura.
 - [x] Encabezados, barras laterales, bordes y tablas con rojo institucional.
 - [x] Texto blanco sobre encabezados principales rojos.
 - [x] Encabezados de tablas con texto negro.
-- [x] Botones y barra de busqueda con fondo blanco y texto negro.
+- [x] Botones y barra de búsqueda con fondo blanco y texto negro.
 - [x] Logo `mercado.png` agregado como icono del sistema sin recorte.
 - [x] Rol del usuario mostrado sin texto sobrante.
 - [x] Ventanas ampliadas moderadamente para evitar botones cortados.
-- [x] El boton `Usuarios` conserva su nombre aunque el rol empleado no pueda abrirlo.
-- [x] El boton `Proveedores` se deshabilita para empleado por ser funcion de administrador.
+- [x] El botón `Usuarios` conserva su nombre aunque el rol empleado no pueda abrirlo.
+- [x] El botón `Proveedores` se deshabilita para empleado por ser función de administrador.
 - [x] `Proveedores` queda debajo de `Corte de caja` y arriba de `Usuarios`.
 - [x] Login editable desde la pestaña `Design` de Eclipse.
-- [x] Login sin `GridBagLayout`, sin `UiFactory`, sin `AppTheme` y sin metodo auxiliar de restricciones.
+- [x] Login sin `GridBagLayout`, sin `UiFactory`, sin `AppTheme` y sin método auxiliar de restricciones.
 - [x] Componentes del login declarados directamente para poder moverlos en WindowBuilder.
 
-## Funcionamiento por modulo
+## Funcionamiento por módulo
 
 - [x] Inventario permite agregar productos.
 - [x] Inventario permite modificar productos.
 - [x] Inventario permite eliminar productos.
 - [x] Inventario permite buscar por producto, precio o existencias.
-- [x] Inventario valida campos vacios.
-- [x] Inventario valida precio y existencias numericas.
+- [x] Inventario valida campos vacíos.
+- [x] Inventario valida precio y existencias numéricas.
 - [x] Inventario evita valores negativos.
 - [x] Inventario evita productos duplicados.
 
 - [x] Clientes permite agregar registros.
 - [x] Clientes permite modificar registros.
 - [x] Clientes permite eliminar registros.
-- [x] Clientes permite buscar por numero, nombre o telefono.
-- [x] Clientes valida campos vacios.
-- [x] Clientes evita numero duplicado.
+- [x] Clientes permite buscar por número, nombre o teléfono.
+- [x] Clientes valida campos vacíos.
+- [x] Clientes evita número duplicado.
 
 - [x] Proveedores permite agregar registros.
 - [x] Proveedores permite modificar registros.
 - [x] Proveedores permite eliminar registros.
-- [x] Proveedores permite buscar por empresa, vendedor o telefono.
-- [x] Proveedores valida campos vacios.
+- [x] Proveedores permite buscar por empresa, vendedor o teléfono.
+- [x] Proveedores valida campos vacíos.
 - [x] Proveedores evita empresa duplicada.
 
 - [x] Ventas usa buscador y tabla de productos.
@@ -105,39 +105,39 @@ Este checklist resume el estado final del sistema despues de los ajustes solicit
 - [x] Ventas descuenta existencias al cobrar.
 - [x] Ventas registra operaciones para corte de caja.
 - [x] Ventas genera ticket PDF al cobrar.
-- [x] Ventas abre automaticamente el ticket PDF generado.
+- [x] Ventas abre automáticamente el ticket PDF generado.
 
 - [x] Corte de caja muestra total vendido.
-- [x] Corte de caja muestra numero de operaciones.
+- [x] Corte de caja muestra número de operaciones.
 - [x] Corte de caja muestra ticket promedio.
 - [x] Corte de caja muestra historial de ventas.
 - [x] Corte de caja muestra estado claro cuando no hay ventas.
-- [x] Corte de caja genera ticket PDF desde boton dedicado.
-- [x] Corte de caja abre automaticamente el ticket PDF generado.
+- [x] Corte de caja genera ticket PDF desde botón dedicado.
+- [x] Corte de caja abre automáticamente el ticket PDF generado.
 
 ## Limpieza del proyecto
 
 - [x] Estructura final clara: `data`, `docs`, `lib`, `scripts`, `src`.
 - [x] `README.md` actualizado.
-- [x] Documentacion actualizada al alcance final.
-- [x] Librerias externas conservadas solo en `lib`.
+- [x] Documentación actualizada al alcance final.
+- [x] Librerías externas conservadas solo en `lib`.
 - [x] Archivos generados excluidos del ZIP.
 - [x] Archivos innecesarios eliminados de la entrega.
 - [x] Nombre final del sistema: `Abarrotes`.
 - [x] Carpeta `tickets` agregada para guardar los PDF generados.
-- [x] Paquete `com.abarrotes.ticket` separado para la creacion de tickets.
+- [x] Paquete `com.abarrotes.ticket` separado para la creación de tickets.
 
-## Verificacion final
+## Verificación final
 
-- [x] Compilacion ejecutada con `.\scripts\compile.ps1`.
-- [x] Proyecto extraido desde el ZIP compila correctamente.
+- [x] Compilación ejecutada con `.\scripts\compile.ps1`.
+- [x] Proyecto extraído desde el ZIP compila correctamente.
 - [x] No quedan referencias al texto retirado de la marca anterior.
-- [x] No quedan referencias al modulo retirado.
-- [x] No queda el texto de acceso restringido que se pidio quitar.
+- [x] No quedan referencias al módulo retirado.
+- [x] No queda el texto de acceso restringido que se pidió quitar.
 - [x] Login listo para abrir y editar en Eclipse WindowBuilder.
 - [x] Proyecto listo para importar en Eclipse como `Abarrotes`.
 - [x] Vistas principales corregidas para WindowBuilder sin reutilizar `GridBagConstraints`.
-- [x] `ClienteView`, `InventarioView`, `ProveedorView`, `UsuarioView` y `VentaView` sin error de doble asociacion `gbc`.
+- [x] `ClienteView`, `InventarioView`, `ProveedorView`, `UsuarioView` y `VentaView` sin error de doble asociación `gbc`.
 - [x] Textos visibles sin color blanco.
 - [x] Botones unificados con el mismo fondo y texto oscuro.
 - [x] Proyecto listo para entrega.

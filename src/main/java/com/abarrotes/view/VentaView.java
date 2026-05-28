@@ -53,8 +53,8 @@ import com.abarrotes.view.ui.NonEditableTableModel;
 import com.abarrotes.view.ui.UiFactory;
 
 /**
- * Esta es la ventana principal de operacion: La Caja Registradora.
- * Aqui se seleccionan los productos, se calcula el total y se descuenta del inventario.
+ * Esta es la ventana principal de operación: La Caja Registradora.
+ * Aquí se seleccionan los productos, se calcula el total y se descuenta del inventario.
  */
 
 public class VentaView extends JDialog {
@@ -188,7 +188,7 @@ public class VentaView extends JDialog {
         JButton btnMenos = UiFactory.botonClaro("-");
         JButton btnQuitar = UiFactory.botonSecundario("Quitar");
         JButton btnVaciar = UiFactory.botonPeligro("Vaciar");
-        JButton btnRegresar = UiFactory.botonClaro("Regresar al menu");
+        JButton btnRegresar = UiFactory.botonClaro("Regresar al menú");
         btnMas.addActionListener(e -> aumentarSeleccion());
         btnMenos.addActionListener(e -> disminuirSeleccion());
         btnQuitar.addActionListener(e -> quitarSeleccion());
@@ -248,7 +248,7 @@ public class VentaView extends JDialog {
         lblTotal = new JLabel(AppTheme.moneda(0), SwingConstants.RIGHT);
         lblTotal.setFont(AppTheme.fuenteNegrita(34));
         lblTotal.setForeground(AppTheme.TEXTO);
-        lblArticulos = new JLabel("0 articulos", SwingConstants.RIGHT);
+        lblArticulos = new JLabel("0 artículos", SwingConstants.RIGHT);
         lblArticulos.setFont(AppTheme.fuenteNegrita(13));
         lblArticulos.setForeground(AppTheme.TEXTO_SUAVE);
         txtRecibido = UiFactory.campoTexto();
@@ -489,7 +489,7 @@ public class VentaView extends JDialog {
         if (carrito.isEmpty()) {
             return;
         }
-        int respuesta = JOptionPane.showConfirmDialog(this, "Deseas vaciar el carrito?", "Confirmar", JOptionPane.YES_NO_OPTION);
+        int respuesta = JOptionPane.showConfirmDialog(this, "¿Deseas vaciar el carrito?", "Confirmar", JOptionPane.YES_NO_OPTION);
         if (respuesta == JOptionPane.YES_OPTION) {
             carrito.clear();
             actualizarCarrito();
@@ -508,7 +508,7 @@ public class VentaView extends JDialog {
             });
         }
         lblTotal.setText(AppTheme.moneda(calcularTotal()));
-        lblArticulos.setText(contarArticulos() + " articulos");
+        lblArticulos.setText(contarArticulos() + " artículos");
         actualizarCambio();
     }
 
@@ -527,7 +527,7 @@ public class VentaView extends JDialog {
             lblCambio.setText("Cambio: " + AppTheme.moneda(Math.max(0, cambio)));
             lblCambio.setForeground(cambio >= 0 ? AppTheme.TEXTO : AppTheme.TEXTO_SUAVE);
         } catch (NumberFormatException e) {
-            lblCambio.setText("Efectivo invalido");
+            lblCambio.setText("Efectivo inválido");
             lblCambio.setForeground(AppTheme.TEXTO_SUAVE);
         }
     }
@@ -535,7 +535,7 @@ public class VentaView extends JDialog {
     // Termina la venta, descuenta inventario y la manda al corte de caja.
     private void finalizarVenta() {
         if (carrito.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "El carrito esta vacio.");
+            JOptionPane.showMessageDialog(this, "El carrito está vacío.");
             return;
         }
 
@@ -587,14 +587,14 @@ public class VentaView extends JDialog {
         try {
             return TicketPdfService.imprimirVenta(idVenta, hora, cliente, lineas, total, recibido, cambio);
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "La venta se registro, pero no se pudo crear el comprobante.");
+            JOptionPane.showMessageDialog(this, "La venta se registró, pero no se pudo crear el comprobante.");
             return null;
         }
     }
 
     private String obtenerNombreCliente() {
         Cliente cliente = listaClientes.getSelectedValue();
-        return cliente == null ? "Publico General" : cliente.getNombre();
+        return cliente == null ? "Público General" : cliente.getNombre();
     }
 
     private int cantidadEnCarrito(Producto producto) {
@@ -634,7 +634,7 @@ public class VentaView extends JDialog {
 
     private void cerrarVentana() {
         if (!carrito.isEmpty()) {
-            int respuesta = JOptionPane.showConfirmDialog(this, "Hay productos sin cobrar. Deseas salir?", "Confirmar salida",
+            int respuesta = JOptionPane.showConfirmDialog(this, "Hay productos sin cobrar. ¿Deseas salir?", "Confirmar salida",
                     JOptionPane.YES_NO_OPTION);
             if (respuesta != JOptionPane.YES_OPTION) {
                 return;
@@ -643,7 +643,7 @@ public class VentaView extends JDialog {
         dispose();
     }
 
-    // Clase interna para recordar que producto y cantidad se vendieron.
+    // Clase interna para recordar qué producto y cantidad se vendieron.
     private static class DetalleVenta {
         Producto producto;
         int cantidad;

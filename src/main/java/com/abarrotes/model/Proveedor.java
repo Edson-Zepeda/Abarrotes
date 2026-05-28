@@ -22,14 +22,14 @@ public class Proveedor {
         this.contacto = contacto;
     }
     
-    //Metodos getters
+    // Métodos getters
     // Proporcionan acceso de "solo lectura" a los datos desde las tablas
     // de la vista ProveedorView.
     public String getNombre() { return nombre; }
     public String getEmpresa() { return empresa; }
     public String getContacto() { return contacto; }
     
-    // Metodos setters para actualizar proveedores desde la ventana.
+    // Métodos setters para actualizar proveedores desde la ventana.
     public void setNombre(String nombre) { this.nombre = nombre; }
     public void setEmpresa(String empresa) { this.empresa = empresa; }
     public void setContacto(String contacto) { this.contacto = contacto; }

@@ -19,7 +19,7 @@ import com.abarrotes.view.ui.IconoApp;
 
 /**
  * Esta ventana es la "Llave de Seguridad" del sistema.
- * Su funcion es verificar que solo las personas autorizadas puedan entrar
+ * Su función es verificar que solo las personas autorizadas puedan entrar
  * y saber si son Administradores o Empleados.
  */
 public class LoginView extends JFrame {
@@ -99,7 +99,7 @@ public class LoginView extends JFrame {
         panelFormulario.setLayout(null);
         contentPane.add(panelFormulario);
 
-        lblTitulo = new JLabel("Iniciar sesion");
+        lblTitulo = new JLabel("Iniciar sesión");
         lblTitulo.setFont(new Font("Segoe UI", Font.BOLD, 26));
         lblTitulo.setForeground(TEXTO);
         lblTitulo.setBounds(34, 30, 300, 36);
@@ -121,7 +121,7 @@ public class LoginView extends JFrame {
         txtUsuario.setBounds(34, 110, 330, 36);
         panelFormulario.add(txtUsuario);
 
-        lblPassword = new JLabel("Contrasena");
+        lblPassword = new JLabel("Contraseña");
         lblPassword.setFont(new Font("Segoe UI", Font.BOLD, 13));
         lblPassword.setForeground(TEXTO_SUAVE);
         lblPassword.setBounds(34, 164, 300, 20);
@@ -162,13 +162,13 @@ public class LoginView extends JFrame {
         getRootPane().setDefaultButton(btnEntrar);
     }
 
-    // Logica para validar y dar accesos.
+    // Lógica para validar y dar accesos.
     private void validarAcceso() {
         String user = txtUsuario.getText().trim();
         String pass = new String(txtPassword.getPassword());
 
         if (user.isEmpty() || pass.isEmpty()) {
-            lblError.setText("Escribe usuario y contrasena.");
+            lblError.setText("Escribe usuario y contraseña.");
             return;
         }
 
@@ -181,8 +181,8 @@ public class LoginView extends JFrame {
             return;
         }
 
-        // Si se ingreso mal, se muestra el error sin sacar al usuario del flujo.
-        lblError.setText("Usuario o contrasena incorrectos.");
+        // Si se ingresó mal, se muestra el error sin sacar al usuario del flujo.
+        lblError.setText("Usuario o contraseña incorrectos.");
         txtPassword.setText("");
         txtPassword.requestFocus();
     }

@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 
 /**
  * Tema visual general del sistema.
- * Aqui se concentran colores, letras y estilos para que todas las ventanas
+ * Aquí se concentran colores, letras y estilos para que todas las ventanas
  * se vean como parte del mismo punto de venta.
  */
 
@@ -40,7 +40,7 @@ public class AppTheme {
     private AppTheme() {
     }
 
-    // Prepara detalles basicos de Swing antes de abrir la primera ventana.
+    // Prepara detalles básicos de Swing antes de abrir la primera ventana.
     public static void instalar() {
         UIManager.put("Button.font", fuenteNegrita(13));
         UIManager.put("Label.font", fuenteNormal(13));

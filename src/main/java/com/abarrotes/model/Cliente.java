@@ -31,7 +31,7 @@ public class Cliente {
     }
     
  
-    // Metodos Getter
+    // Métodos Getter
     // Son necesarios para que componentes externos, como el DefaultTableModel 
     // de la vista (JTable), puedan acceder a los valores de forma segura.
     
@@ -39,7 +39,7 @@ public class Cliente {
     public String getNombre() { return nombre; }
     public String getTelefono() { return telefono; }
     
-    // Metodos setters para modificar clientes desde la pantalla de gestion.
+    // Métodos setters para modificar clientes desde la pantalla de gestión.
     public void setId(String id) { this.id = id; }
     public void setNombre(String nombre) { this.nombre = nombre; }
     public void setTelefono(String telefono) { this.telefono = telefono; }

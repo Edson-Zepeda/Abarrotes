@@ -78,7 +78,7 @@ public class UsuarioView extends JDialog {
         cuerpo.add(new JScrollPane(tabla), BorderLayout.CENTER);
         cuerpo.add(crearFormulario(), BorderLayout.EAST);
 
-        JButton btnCerrar = UiFactory.botonClaro("Regresar al menu");
+        JButton btnCerrar = UiFactory.botonClaro("Regresar al menú");
         btnCerrar.addActionListener(e -> dispose());
 
         panel.add(barraBusqueda, BorderLayout.NORTH);
@@ -130,7 +130,7 @@ public class UsuarioView extends JDialog {
         botones.add(btnBorrar);
 
         JLabel lblUsuario = UiFactory.etiqueta("Usuario");
-        JLabel lblContrasena = UiFactory.etiqueta("Contrasena");
+        JLabel lblContrasena = UiFactory.etiqueta("Contraseña");
         JLabel lblRol = UiFactory.etiqueta("Rol");
         JLabel separador = new JLabel();
 
@@ -232,7 +232,7 @@ public class UsuarioView extends JDialog {
         }
     }
 
-    // Modifica usuario seleccionado y actualiza tambien SQLite.
+    // Modifica usuario seleccionado y actualiza también SQLite.
     private void modificarUsuario() {
         Usuario seleccionado = obtenerUsuarioSeleccionado();
         if (seleccionado == null) {
@@ -282,7 +282,7 @@ public class UsuarioView extends JDialog {
             return;
         }
 
-        int respuesta = JOptionPane.showConfirmDialog(this, "Deseas borrar este usuario?", "Confirmar", JOptionPane.YES_NO_OPTION);
+        int respuesta = JOptionPane.showConfirmDialog(this, "¿Deseas borrar este usuario?", "Confirmar", JOptionPane.YES_NO_OPTION);
         if (respuesta == JOptionPane.YES_OPTION) {
             if (BaseDatos.borrarUsuario(seleccionado.getUsername())) {
                 Main.listaUsuarios.remove(seleccionado);
@@ -295,7 +295,7 @@ public class UsuarioView extends JDialog {
     }
 
     /**
-     * Este metodo limpia la tabla y vuelve a dibujar a los usuarios
+     * Este método limpia la tabla y vuelve a dibujar a los usuarios
      * leyendo la lista actualizada desde la memoria (Main).
      */
     private void actualizarTabla() {

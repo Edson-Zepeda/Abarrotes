@@ -63,7 +63,7 @@ public class ProveedorView extends JDialog {
         lblRegistros = new JLabel();
         JPanel barraBusqueda = UiFactory.barraBusqueda(txtBuscar, btnLimpiarBusqueda, lblRegistros);
 
-        modelo = new NonEditableTableModel(new Object[]{"Empresa", "Vendedor", "Telefono"}, 0);
+        modelo = new NonEditableTableModel(new Object[]{"Empresa", "Vendedor", "Teléfono"}, 0);
         tabla = new JTable(modelo);
         tabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         AppTheme.configurarTabla(tabla);
@@ -73,7 +73,7 @@ public class ProveedorView extends JDialog {
         cuerpo.add(new JScrollPane(tabla), BorderLayout.CENTER);
         cuerpo.add(crearFormulario(), BorderLayout.EAST);
 
-        JButton btnCerrar = UiFactory.botonClaro("Regresar al menu");
+        JButton btnCerrar = UiFactory.botonClaro("Regresar al menú");
         btnCerrar.addActionListener(e -> dispose());
 
         panel.add(barraBusqueda, BorderLayout.NORTH);
@@ -125,7 +125,7 @@ public class ProveedorView extends JDialog {
 
         JLabel lblEmpresa = UiFactory.etiqueta("Empresa");
         JLabel lblVendedor = UiFactory.etiqueta("Vendedor");
-        JLabel lblTelefono = UiFactory.etiqueta("Telefono");
+        JLabel lblTelefono = UiFactory.etiqueta("Teléfono");
         JLabel separador = new JLabel();
 
         GridBagConstraints gbcLblModo = new GridBagConstraints();
@@ -261,7 +261,7 @@ public class ProveedorView extends JDialog {
             return;
         }
 
-        int respuesta = JOptionPane.showConfirmDialog(this, "Deseas borrar este proveedor?", "Confirmar", JOptionPane.YES_NO_OPTION);
+        int respuesta = JOptionPane.showConfirmDialog(this, "¿Deseas borrar este proveedor?", "Confirmar", JOptionPane.YES_NO_OPTION);
         if (respuesta == JOptionPane.YES_OPTION) {
             Main.listaProveedores.remove(proveedor);
             actualizarTabla();
@@ -270,7 +270,7 @@ public class ProveedorView extends JDialog {
     }
 
     /**
-     * Este metodo borra lo que se ve en la tabla y lo vuelve a llenar con la lista
+     * Este método borra lo que se ve en la tabla y lo vuelve a llenar con la lista
      * actualizada que tiene el programa en su memoria principal.
      */
     private void actualizarTabla() {

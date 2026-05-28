@@ -22,7 +22,7 @@ public class BaseDatos {
     /**
      * Abre la conexion con SQLite.
      * Si se ejecuta desde scripts usa data/, y si se ejecuta desde Eclipse
-     * tambien puede encontrar la carpeta dentro de Abarrotes/data/.
+     * también puede encontrar la carpeta dentro de Abarrotes/data/.
      */
     private static Connection conectar() throws SQLException {
         try {
@@ -78,7 +78,7 @@ public class BaseDatos {
     }
 
     /**
-     * Carga todos los usuarios guardados para que la tabla de gestion
+     * Carga todos los usuarios guardados para que la tabla de gestión
      * siga trabajando con la lista que ya usa el programa.
      */
     public static ArrayList<Usuario> cargarUsuarios() {
@@ -153,7 +153,7 @@ public class BaseDatos {
 
     /**
      * Modifica un usuario existente.
-     * Se usa el username original por si tambien se cambia el nombre.
+     * Se usa el username original por si también se cambia el nombre.
      */
     public static boolean modificarUsuario(String usernameOriginal, Usuario usuario) {
         String sql = "UPDATE usuarios SET username = ?, password = ?, rol = ? WHERE username = ?";

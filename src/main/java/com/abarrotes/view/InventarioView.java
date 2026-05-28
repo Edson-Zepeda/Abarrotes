@@ -30,7 +30,7 @@ import com.abarrotes.view.ui.UiFactory;
 
 /**
  * Esta ventana es el "Almacen Digital".
- * Aqui es donde el equipo registra que productos vende la tienda y cuanta mercancia queda.
+ * Aquí es donde el equipo registra qué productos vende la tienda y cuánta mercancía queda.
  */
 
 public class InventarioView extends JDialog {
@@ -79,7 +79,7 @@ public class InventarioView extends JDialog {
         cuerpo.add(new JScrollPane(tabla), BorderLayout.CENTER);
         cuerpo.add(crearFormulario(), BorderLayout.EAST);
 
-        JButton btnCerrar = UiFactory.botonClaro("Regresar al menu");
+        JButton btnCerrar = UiFactory.botonClaro("Regresar al menú");
         btnCerrar.addActionListener(e -> dispose());
 
         panel.add(barraBusqueda, BorderLayout.NORTH);
@@ -209,7 +209,7 @@ public class InventarioView extends JDialog {
         return panel;
     }
 
-    // Agrega un producto nuevo validando numeros y duplicados.
+    // Agrega un producto nuevo validando números y duplicados.
     private void agregarProducto() {
         Producto producto = leerProductoFormulario();
         if (producto == null) {
@@ -260,7 +260,7 @@ public class InventarioView extends JDialog {
             return;
         }
 
-        int respuesta = JOptionPane.showConfirmDialog(this, "Deseas borrar este producto?", "Confirmar", JOptionPane.YES_NO_OPTION);
+        int respuesta = JOptionPane.showConfirmDialog(this, "¿Deseas borrar este producto?", "Confirmar", JOptionPane.YES_NO_OPTION);
         if (respuesta == JOptionPane.YES_OPTION) {
             listaProductos.remove(seleccionado);
             actualizarTabla();
@@ -288,12 +288,12 @@ public class InventarioView extends JDialog {
             }
             return new Producto(nombre, precio, stock);
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Precio y existencias deben ser numeros validos");
+            JOptionPane.showMessageDialog(this, "Precio y existencias deben ser números válidos");
             return null;
         }
     }
 
-    // Metodo para llenar la tabla con filtro de busqueda.
+    // Método para llenar la tabla con filtro de búsqueda.
     private void actualizarTabla() {
         modelo.setRowCount(0);
         listaFiltrada.clear();

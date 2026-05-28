@@ -24,14 +24,14 @@ public class Usuario {
         this.rol = rol;
     }
     
-    // Metodos getters
+    // Métodos getters
     // Proporcionan los datos necesarios para el proceso de Login 
     // y para llenar la tabla de gestión de usuarios.
     public String getUsername() { return username; }
     public String getPassword() { return password; }
     public String getRol() { return rol; }
     
-    // Metodos setters para actualizar usuarios desde el panel de control.
+    // Métodos setters para actualizar usuarios desde el panel de control.
     public void setUsername(String username) { this.username = username; }
     public void setPassword(String password) { this.password = password; }
     public void setRol(String rol) { this.rol = rol; }

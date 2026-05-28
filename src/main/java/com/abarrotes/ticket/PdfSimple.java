@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Escritor PDF muy pequeno para tickets.
- * Evita agregar mas librerias y solo dibuja texto simple en una pagina.
+ * Escritor PDF muy pequeño para tickets.
+ * Evita agregar más librerías y solo dibuja texto simple en una página.
  */
 class PdfSimple {
     private static final int ANCHO = 260;
@@ -28,7 +28,7 @@ class PdfSimple {
         objetos.add("<< /Type /Pages /Kids [3 0 R] /Count 1 >>");
         objetos.add("<< /Type /Page /Parent 2 0 R /MediaBox [0 0 " + ANCHO + " " + alto
                 + "] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>");
-        objetos.add("<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>");
+        objetos.add("<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>");
         objetos.add("<< /Length " + contenido.getBytes(StandardCharsets.ISO_8859_1).length
                 + " >>\nstream\n" + contenido + "endstream");
 
@@ -83,7 +83,7 @@ class PdfSimple {
                         .append(" ")
                         .append(y)
                         .append(" Tm (")
-                        .append(escapar(limpiar(texto)))
+                        .append(escapar(texto))
                         .append(") Tj ET\n");
                 y -= fuente + 5;
             }
@@ -102,18 +102,4 @@ class PdfSimple {
                 .replace(")", "\\)");
     }
 
-    private static String limpiar(String texto) {
-        return texto.replace('á', 'a')
-                .replace('é', 'e')
-                .replace('í', 'i')
-                .replace('ó', 'o')
-                .replace('ú', 'u')
-                .replace('Á', 'A')
-                .replace('É', 'E')
-                .replace('Í', 'I')
-                .replace('Ó', 'O')
-                .replace('Ú', 'U')
-                .replace('ñ', 'n')
-                .replace('Ñ', 'N');
-    }
 }

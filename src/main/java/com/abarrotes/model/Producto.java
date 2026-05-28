@@ -31,7 +31,7 @@ public class Producto {
     public double getPrecio() { return precio; }
     public int getStock() { return stock; }
     
-    // Metodos setters para modificar productos desde Inventario.
+    // Métodos setters para modificar productos desde Inventario.
     public void setNombre(String nombre) { this.nombre = nombre; }
     public void setPrecio(double precio) { this.precio = precio; }
     public void setStock(int stock) { this.stock = stock; }

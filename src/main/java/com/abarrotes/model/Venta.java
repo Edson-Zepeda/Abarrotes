@@ -19,7 +19,7 @@ public class Venta {
         this.total = total;
     }
 
-    // Metodos getters para llenar la tabla de corte de caja.
+    // Métodos getters para llenar la tabla de corte de caja.
     public int getId() { return id; }
     public String getHora() { return hora; }
     public String getCliente() { return cliente; }

@@ -10,15 +10,15 @@ Este archivo ayuda a contestar la declaratoria solicitada en los documentos del 
 
 - Organizar el repositorio.
 - Proponer plan de trabajo.
-- Redactar estructura inicial de documentacion.
-- Apoyar en ideas de implementacion.
-- Obtener codigo base inicial.
+- Redactar estructura inicial de documentación.
+- Apoyar en ideas de implementación.
+- Obtener código base inicial.
 
 ## Prompts o solicitudes relevantes
 
-- Solicitud inicial: organizar el proyecto como equipo profesional, considerando que Edson es capitan del equipo 6, Pablo Israel apoya en desarrollo y el resto se enfoca en reporte/presentacion.
+- Solicitud inicial: organizar el proyecto como equipo profesional, considerando que Edson es capitán del equipo 6, Pablo Israel apoya en desarrollo y el resto se enfoca en reporte/presentación.
 
 ## Porcentaje sugerido a declarar
 
-Este porcentaje debe decidirlo el equipo honestamente al final. Si Codex solo apoya con organizacion, redaccion y codigo base, una declaracion razonable podria estar entre 20% y 40%, dependiendo de cuanto codigo final sea escrito o modificado con apoyo de IA.
+Este porcentaje debe decidirlo el equipo honestamente al final. Si Codex solo apoya con organización, redacción y código base, una declaración razonable podría estar entre 20% y 40%, dependiendo de cuánto código final sea escrito o modificado con apoyo de IA.
 

@@ -22,7 +22,7 @@ import com.abarrotes.view.ui.UiFactory;
 /**
  * Esta ventana es el "Tablero Principal".
  * Funciona como un distribuidor: recibe al usuario y le permite viajar
- * a cualquier seccion del sistema (Ventas, Inventario, etc.).
+ * a cualquier sección del sistema (Ventas, Inventario, etc.).
  */
 
 public class MenuPrincipal extends JFrame {
@@ -98,7 +98,7 @@ public class MenuPrincipal extends JFrame {
         btnProveedores = crearBotonNavegacion("Proveedores", false);
         btnCorte = crearBotonNavegacion("Corte de caja", false);
         btnUsuarios = crearBotonNavegacion("Usuarios", false);
-        btnCerrarSesion = crearBotonNavegacion("Cerrar sesion", false);
+        btnCerrarSesion = crearBotonNavegacion("Cerrar sesión", false);
 
         btnVentas.addActionListener(e -> abrirVentas());
         btnInventario.addActionListener(e -> abrirInventario());
@@ -125,7 +125,7 @@ public class MenuPrincipal extends JFrame {
 
         JPanel encabezado = new JPanel(new BorderLayout());
         encabezado.setBackground(AppTheme.FONDO);
-        JLabel titulo = UiFactory.tituloPanel("Resumen de operacion");
+        JLabel titulo = UiFactory.tituloPanel("Resumen de operación");
         encabezado.add(titulo, BorderLayout.CENTER);
 
         JPanel tarjetas = new JPanel(new GridLayout(2, 3, 14, 14));
@@ -141,7 +141,7 @@ public class MenuPrincipal extends JFrame {
         tarjetas.add(crearTarjeta("Productos activos", lblProductos, AppTheme.ROJO));
         tarjetas.add(crearTarjeta("Clientes", lblClientes, AppTheme.TEXTO));
         tarjetas.add(crearTarjeta("Proveedores", lblProveedores, AppTheme.TEXTO));
-        tarjetas.add(crearTarjeta("Ventas del dia", lblOperaciones, AppTheme.VERDE));
+        tarjetas.add(crearTarjeta("Ventas del día", lblOperaciones, AppTheme.VERDE));
         tarjetas.add(crearTarjeta("Total vendido", lblTotalVendido, AppTheme.VERDE));
         tarjetas.add(crearTarjeta("Existencias bajas", lblStockBajo, AppTheme.PELIGRO));
 
@@ -231,7 +231,7 @@ public class MenuPrincipal extends JFrame {
         actualizarDashboard();
     }
 
-    // Cierra el menu principal y muestra de nuevo la pantalla de acceso.
+    // Cierra el menú principal y muestra de nuevo la pantalla de acceso.
     private void cerrarSesion() {
         LoginView login = new LoginView();
         login.setVisible(true);

@@ -63,7 +63,7 @@ public class ClienteView extends JDialog {
         lblRegistros = new JLabel();
         JPanel barraBusqueda = UiFactory.barraBusqueda(txtBuscar, btnLimpiarBusqueda, lblRegistros);
 
-        modelo = new NonEditableTableModel(new Object[]{"Numero de Cliente", "Nombre", "Telefono"}, 0);
+        modelo = new NonEditableTableModel(new Object[]{"Número de Cliente", "Nombre", "Teléfono"}, 0);
         tabla = new JTable(modelo);
         tabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         AppTheme.configurarTabla(tabla);
@@ -73,7 +73,7 @@ public class ClienteView extends JDialog {
         cuerpo.add(new JScrollPane(tabla), BorderLayout.CENTER);
         cuerpo.add(crearFormulario(), BorderLayout.EAST);
 
-        JButton btnCerrar = UiFactory.botonClaro("Regresar al menu");
+        JButton btnCerrar = UiFactory.botonClaro("Regresar al menú");
         btnCerrar.addActionListener(e -> dispose());
 
         panel.add(barraBusqueda, BorderLayout.NORTH);
@@ -123,9 +123,9 @@ public class ClienteView extends JDialog {
         botones.add(btnLimpiar);
         botones.add(btnBorrar);
 
-        JLabel lblNumeroCliente = UiFactory.etiqueta("Numero de Cliente");
+        JLabel lblNumeroCliente = UiFactory.etiqueta("Número de Cliente");
         JLabel lblNombre = UiFactory.etiqueta("Nombre");
-        JLabel lblTelefono = UiFactory.etiqueta("Telefono");
+        JLabel lblTelefono = UiFactory.etiqueta("Teléfono");
         JLabel separador = new JLabel();
 
         GridBagConstraints gbcLblModo = new GridBagConstraints();
@@ -203,7 +203,7 @@ public class ClienteView extends JDialog {
         return panel;
     }
 
-    // Agrega clientes validando que no falten datos ni se repita el numero.
+    // Agrega clientes validando que no falten datos ni se repita el número.
     private void agregarCliente() {
         String id = txtId.getText().trim();
         String nombre = txtNombre.getText().trim();
@@ -214,7 +214,7 @@ public class ClienteView extends JDialog {
             return;
         }
         if (buscarClientePorId(id) != null) {
-            JOptionPane.showMessageDialog(this, "Ya existe un cliente con ese numero");
+            JOptionPane.showMessageDialog(this, "Ya existe un cliente con ese número");
             return;
         }
 
@@ -242,7 +242,7 @@ public class ClienteView extends JDialog {
 
         Cliente repetido = buscarClientePorId(id);
         if (repetido != null && repetido != cliente) {
-            JOptionPane.showMessageDialog(this, "Ya existe otro cliente con ese numero");
+            JOptionPane.showMessageDialog(this, "Ya existe otro cliente con ese número");
             return;
         }
 
@@ -261,7 +261,7 @@ public class ClienteView extends JDialog {
             return;
         }
 
-        int respuesta = JOptionPane.showConfirmDialog(this, "Deseas borrar este cliente?", "Confirmar", JOptionPane.YES_NO_OPTION);
+        int respuesta = JOptionPane.showConfirmDialog(this, "¿Deseas borrar este cliente?", "Confirmar", JOptionPane.YES_NO_OPTION);
         if (respuesta == JOptionPane.YES_OPTION) {
             Main.listaClientes.remove(cliente);
             actualizarTabla();
@@ -270,8 +270,8 @@ public class ClienteView extends JDialog {
     }
 
     /**
-     * Este metodo borra lo que hay en la tabla y vuelve a leer la lista de clientes
-     * para que siempre muestre la informacion mas reciente.
+     * Este método borra lo que hay en la tabla y vuelve a leer la lista de clientes
+     * para que siempre muestre la información más reciente.
      */
     private void actualizarTabla() {
         modelo.setRowCount(0);

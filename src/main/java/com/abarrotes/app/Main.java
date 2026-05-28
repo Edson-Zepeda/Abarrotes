@@ -20,8 +20,8 @@ import com.abarrotes.view.ui.AppTheme;
 public class Main {
 
     // Base de Datos temporal por medio de listas
-    // Se usan ArrayLists estaticos para que los datos sean accesibles desde
-    // cualquier ventana (Ventas, Inventario, etc.) sin perder la informacion.
+    // Se usan ArrayLists estáticos para que los datos sean accesibles desde
+    // cualquier ventana (Ventas, Inventario, etc.) sin perder la información.
 
     public static ArrayList<Producto> inventario = new ArrayList<>();
 
@@ -58,36 +58,36 @@ public class Main {
 
     private static void cargarDatosPrueba() {
         // Registro de clientes del abarrotes
-        listaClientes.add(new Cliente("C001", "Publico General", "000-0000"));
-        listaClientes.add(new Cliente("C002", "Juan Perez", "555-0123"));
+        listaClientes.add(new Cliente("C001", "Público General", "000-0000"));
+        listaClientes.add(new Cliente("C002", "Juan Pérez", "555-0123"));
 
         // Proveedores de prueba
         listaProveedores.add(new Proveedor("Carlos Trejo", "Lala", "555-9876"));
-        listaProveedores.add(new Proveedor("Ana Martinez", "Bimbo", "555-4321"));
+        listaProveedores.add(new Proveedor("Ana Martínez", "Bimbo", "555-4321"));
 
         // Usuarios iniciales cargados desde SQLite para el Login
         listaUsuarios = BaseDatos.cargarUsuarios();
 
-        // Inventario de abarrotes basico
+        // Inventario de abarrotes básico
         inventario.add(new Producto("Leche Entera 1L", 25.50, 50));
         inventario.add(new Producto("Huevo Blanco 1kg", 48.00, 20));
         inventario.add(new Producto("Arroz Extra 900g", 22.00, 35));
         inventario.add(new Producto("Frijol Negro 1kg", 35.00, 40));
         inventario.add(new Producto("Aceite Vegetal 1L", 42.00, 15));
-        inventario.add(new Producto("Azucar Estandar 1kg", 28.00, 30));
+        inventario.add(new Producto("Azúcar Estándar 1kg", 28.00, 30));
         inventario.add(new Producto("Sal de Mesa 500g", 12.50, 25));
-        inventario.add(new Producto("Cafe Soluble 200g", 85.00, 10));
-        inventario.add(new Producto("Atun en Agua", 19.50, 45));
+        inventario.add(new Producto("Café Soluble 200g", 85.00, 10));
+        inventario.add(new Producto("Atún en Agua", 19.50, 45));
         inventario.add(new Producto("Mayonesa 400g", 38.00, 20));
 
         // Productos de limpieza (inventario)
-        inventario.add(new Producto("Jabon de Trastes", 21.50, 18));
+        inventario.add(new Producto("Jabón de Trastes", 21.50, 18));
         inventario.add(new Producto("Pasta de Dientes", 35.00, 25));
-        inventario.add(new Producto("Papel Higienico 4pzs", 32.00, 50));
+        inventario.add(new Producto("Papel Higiénico 4pzs", 32.00, 50));
         inventario.add(new Producto("Detergente 1kg", 45.00, 12));
         inventario.add(new Producto("Limpiador Multiusos", 18.00, 22));
         inventario.add(new Producto("Shampoo 400ml", 55.00, 15));
-        inventario.add(new Producto("Jabon de Barra", 14.00, 40));
+        inventario.add(new Producto("Jabón de Barra", 14.00, 40));
         inventario.add(new Producto("Cloro 1L", 16.50, 30));
 
         // Snacks y refrescos (inventario)
@@ -100,11 +100,11 @@ public class Main {
 
         // Etc inventario...
         inventario.add(new Producto("Sopa de Pasta", 8.50, 100));
-        inventario.add(new Producto("Pure de Tomate", 9.00, 40));
+        inventario.add(new Producto("Puré de Tomate", 9.00, 40));
         inventario.add(new Producto("Chiles en Vinagre", 15.50, 25));
         inventario.add(new Producto("Harina de Trigo 1kg", 20.00, 15));
-        inventario.add(new Producto("Consome de Pollo", 12.00, 50));
-        inventario.add(new Producto("Cereal de Maiz", 52.00, 8));
+        inventario.add(new Producto("Consomé de Pollo", 12.00, 50));
+        inventario.add(new Producto("Cereal de Maíz", 52.00, 8));
 
         System.out.println("SISTEMA ABARROTES: Inventario listo con 30 productos.");
     }
