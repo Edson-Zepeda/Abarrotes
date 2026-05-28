@@ -59,6 +59,8 @@ Este checklist resume el estado final del sistema despues de los ajustes solicit
 - [x] Rol del usuario mostrado sin texto sobrante.
 - [x] Ventanas ampliadas moderadamente para evitar botones cortados.
 - [x] El boton `Usuarios` conserva su nombre aunque el rol empleado no pueda abrirlo.
+- [x] El boton `Proveedores` se deshabilita para empleado por ser funcion de administrador.
+- [x] `Proveedores` queda debajo de `Corte de caja` y arriba de `Usuarios`.
 - [x] Login editable desde la pestaña `Design` de Eclipse.
 - [x] Login sin `GridBagLayout`, sin `UiFactory`, sin `AppTheme` y sin metodo auxiliar de restricciones.
 - [x] Componentes del login declarados directamente para poder moverlos en WindowBuilder.

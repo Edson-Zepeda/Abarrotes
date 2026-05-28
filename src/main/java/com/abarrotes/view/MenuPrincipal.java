@@ -109,8 +109,8 @@ public class MenuPrincipal extends JFrame {
         botones.add(btnVentas);
         botones.add(btnInventario);
         botones.add(btnClientes);
-        botones.add(btnProveedores);
         botones.add(btnCorte);
+        botones.add(btnProveedores);
         botones.add(btnUsuarios);
         botones.add(btnCerrarSesion);
 
@@ -211,8 +211,10 @@ public class MenuPrincipal extends JFrame {
     }
 
     private void abrirProveedores() {
-        new ProveedorView(this).setVisible(true);
-        actualizarDashboard();
+        if (btnProveedores.isEnabled()) {
+            new ProveedorView(this).setVisible(true);
+            actualizarDashboard();
+        }
     }
 
     private void abrirUsuarios() {
@@ -237,6 +239,9 @@ public class MenuPrincipal extends JFrame {
 
     private void aplicarSeguridadRol() {
         if ("Empleado".equalsIgnoreCase(rol)) {
+            btnProveedores.setEnabled(false);
+            btnProveedores.setText("Proveedores");
+            btnProveedores.setToolTipText("Disponible para administrador");
             btnUsuarios.setEnabled(false);
             btnUsuarios.setText("Usuarios");
             btnUsuarios.setToolTipText("Disponible para administrador");
