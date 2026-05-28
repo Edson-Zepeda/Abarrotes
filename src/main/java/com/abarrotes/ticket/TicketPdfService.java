@@ -1,5 +1,6 @@
 package com.abarrotes.ticket;
 
+import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 import java.text.NumberFormat;
@@ -92,6 +93,22 @@ public class TicketPdfService {
 
         PdfSimple.guardar(archivo, renglones);
         return archivo;
+    }
+
+    public static boolean abrirPdf(File archivo) {
+        if (archivo == null || !archivo.exists()) {
+            return false;
+        }
+        if (!Desktop.isDesktopSupported() || !Desktop.getDesktop().isSupported(Desktop.Action.OPEN)) {
+            return false;
+        }
+
+        try {
+            Desktop.getDesktop().open(archivo);
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
     }
 
     private static File carpetaTickets() throws IOException {

@@ -63,5 +63,5 @@ Ejecutar:
 Al ejecutar el sistema se crea la base de datos local `data/abarrotes.db`.
 El login inicial queda con `admin / 1234` y `empleado / 1234`.
 
-Al cobrar una venta se genera automaticamente un ticket PDF en `tickets/`.
-En corte de caja se puede usar el boton `Imprimir corte PDF` para guardar el ticket del corte.
+Al cobrar una venta se genera automaticamente un ticket PDF en `tickets/` y se abre con el visor predeterminado.
+En corte de caja se puede usar el boton `Imprimir corte PDF` para guardar y abrir el ticket del corte.

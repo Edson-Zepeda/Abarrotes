@@ -566,7 +566,12 @@ public class VentaView extends JDialog {
         String mensaje = "Venta realizada por " + AppTheme.moneda(total)
                 + "\nCambio: " + AppTheme.moneda(recibido - total);
         if (ticket != null) {
-            mensaje += "\nTicket PDF: " + ticket.getAbsolutePath();
+            boolean abierto = TicketPdfService.abrirPdf(ticket);
+            if (abierto) {
+                mensaje += "\nTicket PDF abierto automaticamente.";
+            } else {
+                mensaje += "\nTicket PDF: " + ticket.getAbsolutePath();
+            }
         }
         JOptionPane.showMessageDialog(this, mensaje);
         dispose();
