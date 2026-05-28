@@ -24,6 +24,7 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableCellRenderer;
 import com.abarrotes.model.Producto;
 import com.abarrotes.view.ui.AppTheme;
+import com.abarrotes.view.ui.IconoApp;
 import com.abarrotes.view.ui.NonEditableTableModel;
 import com.abarrotes.view.ui.UiFactory;
 
@@ -44,6 +45,7 @@ public class InventarioView extends JDialog {
 
     public InventarioView(JFrame parent, ArrayList<Producto> listaProductos) {
         super(parent, "Inventario - Abarrotes", true);
+        IconoApp.aplicar(this);
         this.listaProductos = listaProductos;
         setSize(1040, 680);
         setMinimumSize(new Dimension(960, 620));

@@ -43,6 +43,7 @@ docs/                 Planeacion, roles, backlog y guias de entrega
 lib/                  Driver SQLite JDBC para la base de datos local
 scripts/              Scripts simples para compilar y ejecutar
 src/main/java/        Codigo fuente Java
+src/main/resources/   Imagenes y recursos del sistema
 tickets/              Carpeta donde se guardan los tickets PDF generados
 ```
 

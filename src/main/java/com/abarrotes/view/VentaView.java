@@ -48,6 +48,7 @@ import com.abarrotes.model.Venta;
 import com.abarrotes.ticket.LineaTicket;
 import com.abarrotes.ticket.TicketPdfService;
 import com.abarrotes.view.ui.AppTheme;
+import com.abarrotes.view.ui.IconoApp;
 import com.abarrotes.view.ui.NonEditableTableModel;
 import com.abarrotes.view.ui.UiFactory;
 
@@ -78,6 +79,7 @@ public class VentaView extends JDialog {
 
     public VentaView(JFrame parent) {
         super(parent, "Terminal de Ventas - Abarrotes", true);
+        IconoApp.aplicar(this);
         setSize(1240, 760);
         setMinimumSize(new Dimension(1120, 700));
         setLocationRelativeTo(parent);

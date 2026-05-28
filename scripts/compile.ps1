@@ -8,5 +8,8 @@ if (-not $sourceFiles) {
 
 New-Item -ItemType Directory -Force -Path "out" | Out-Null
 javac -encoding UTF-8 -cp "lib/*" -d out $sourceFiles
+if (Test-Path "src/main/resources") {
+    Copy-Item -Path "src/main/resources/*" -Destination "out" -Recurse -Force
+}
 Write-Host "Compilacion completada en out/"
 

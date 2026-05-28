@@ -15,6 +15,7 @@ import javax.swing.SwingConstants;
 
 import com.abarrotes.app.BaseDatos;
 import com.abarrotes.model.Usuario;
+import com.abarrotes.view.ui.IconoApp;
 
 /**
  * Esta ventana es la "Llave de Seguridad" del sistema.
@@ -54,6 +55,7 @@ public class LoginView extends JFrame {
 
     private void initialize() {
         setTitle("Abarrotes - Acceso");
+        IconoApp.aplicar(this);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 560);
         setMinimumSize(new Dimension(900, 560));

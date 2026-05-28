@@ -16,6 +16,7 @@ import com.abarrotes.app.Main;
 import com.abarrotes.model.Producto;
 import com.abarrotes.model.Venta;
 import com.abarrotes.view.ui.AppTheme;
+import com.abarrotes.view.ui.IconoApp;
 import com.abarrotes.view.ui.UiFactory;
 
 /**
@@ -45,6 +46,7 @@ public class MenuPrincipal extends JFrame {
         this.rol = rol;
 
         setTitle("Sistema de Abarrotes - Equipo 6");
+        IconoApp.aplicar(this);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1160, 740);
         setMinimumSize(new Dimension(1040, 660));

@@ -56,6 +56,7 @@ Este checklist resume el estado final del sistema despues de los ajustes solicit
 - [x] Texto blanco sobre encabezados principales rojos.
 - [x] Encabezados de tablas con texto negro.
 - [x] Botones y barra de busqueda con fondo blanco y texto negro.
+- [x] Logo `mercado.png` agregado como icono del sistema sin recorte.
 - [x] Rol del usuario mostrado sin texto sobrante.
 - [x] Ventanas ampliadas moderadamente para evitar botones cortados.
 - [x] El boton `Usuarios` conserva su nombre aunque el rol empleado no pueda abrirlo.

@@ -17,6 +17,7 @@ import com.abarrotes.app.Main;
 import com.abarrotes.model.Venta;
 import com.abarrotes.ticket.TicketPdfService;
 import com.abarrotes.view.ui.AppTheme;
+import com.abarrotes.view.ui.IconoApp;
 import com.abarrotes.view.ui.NonEditableTableModel;
 import com.abarrotes.view.ui.UiFactory;
 
@@ -31,6 +32,7 @@ public class CorteCajaView extends JDialog {
 
     public CorteCajaView(JFrame parent) {
         super(parent, "Corte de Caja - Abarrotes", true);
+        IconoApp.aplicar(this);
         setSize(1040, 680);
         setMinimumSize(new Dimension(960, 620));
         setLocationRelativeTo(parent);

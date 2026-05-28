@@ -25,6 +25,7 @@ import com.abarrotes.app.BaseDatos;
 import com.abarrotes.app.Main;
 import com.abarrotes.model.Usuario;
 import com.abarrotes.view.ui.AppTheme;
+import com.abarrotes.view.ui.IconoApp;
 import com.abarrotes.view.ui.NonEditableTableModel;
 import com.abarrotes.view.ui.UiFactory;
 
@@ -46,6 +47,7 @@ public class UsuarioView extends JDialog {
 
     public UsuarioView(JFrame parent) {
         super(parent, "Usuarios - Abarrotes", true);
+        IconoApp.aplicar(this);
         setSize(1040, 680);
         setMinimumSize(new Dimension(960, 620));
         setLocationRelativeTo(parent);

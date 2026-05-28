@@ -22,6 +22,7 @@ import javax.swing.event.DocumentListener;
 import com.abarrotes.app.Main;
 import com.abarrotes.model.Cliente;
 import com.abarrotes.view.ui.AppTheme;
+import com.abarrotes.view.ui.IconoApp;
 import com.abarrotes.view.ui.NonEditableTableModel;
 import com.abarrotes.view.ui.UiFactory;
 
@@ -41,6 +42,7 @@ public class ClienteView extends JDialog {
 
     public ClienteView(JFrame parent) {
         super(parent, "Clientes - Abarrotes", true);
+        IconoApp.aplicar(this);
         setSize(1040, 680);
         setMinimumSize(new Dimension(960, 620));
         setLocationRelativeTo(parent);
