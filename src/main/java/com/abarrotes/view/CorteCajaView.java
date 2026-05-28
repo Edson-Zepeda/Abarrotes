@@ -129,12 +129,12 @@ public class CorteCajaView extends JDialog {
         try {
             File archivo = TicketPdfService.imprimirCorte(Main.ventasDelDia);
             if (TicketPdfService.abrirPdf(archivo)) {
-                JOptionPane.showMessageDialog(this, "Ticket de corte PDF abierto automaticamente.");
+                JOptionPane.showMessageDialog(this, "Corte abierto correctamente.");
             } else {
-                JOptionPane.showMessageDialog(this, "Ticket de corte guardado en:\n" + archivo.getAbsolutePath());
+                JOptionPane.showMessageDialog(this, "Corte guardado en:\n" + archivo.getAbsolutePath());
             }
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "No se pudo crear el ticket de corte en PDF.");
+            JOptionPane.showMessageDialog(this, "No se pudo crear el comprobante de corte.");
         }
     }
 }

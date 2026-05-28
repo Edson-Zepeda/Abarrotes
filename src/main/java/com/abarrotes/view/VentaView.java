@@ -568,12 +568,7 @@ public class VentaView extends JDialog {
         String mensaje = "Venta realizada por " + AppTheme.moneda(total)
                 + "\nCambio: " + AppTheme.moneda(recibido - total);
         if (ticket != null) {
-            boolean abierto = TicketPdfService.abrirPdf(ticket);
-            if (abierto) {
-                mensaje += "\nTicket PDF abierto automaticamente.";
-            } else {
-                mensaje += "\nTicket PDF: " + ticket.getAbsolutePath();
-            }
+            TicketPdfService.abrirPdf(ticket);
         }
         JOptionPane.showMessageDialog(this, mensaje);
         dispose();
@@ -592,7 +587,7 @@ public class VentaView extends JDialog {
         try {
             return TicketPdfService.imprimirVenta(idVenta, hora, cliente, lineas, total, recibido, cambio);
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "La venta se registro, pero no se pudo crear el ticket PDF.");
+            JOptionPane.showMessageDialog(this, "La venta se registro, pero no se pudo crear el comprobante.");
             return null;
         }
     }
