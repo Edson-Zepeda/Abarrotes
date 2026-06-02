@@ -1,4 +1,4 @@
-# Guia para el reporte final
+# Guía para el reporte final
 
 ## Portada
 
@@ -9,20 +9,20 @@
 - Profesor.
 - Fecha de entrega.
 
-## 1. Introduccion
+## 1. Introducción
 
-Explicar que el sistema resuelve la administracion basica de un abarrotes: productos, clientes, proveedores, compras, ventas, corte de caja y usuarios.
+Explicar que el sistema resuelve la administración básica de un abarrotes: productos, clientes, proveedores, ventas, corte de caja y usuarios.
 
-## 2. Analisis del problema
+## 2. Análisis del problema
 
 Describir los problemas comunes:
 
 - Control manual de inventario.
 - Errores al registrar ventas.
-- Falta de control sobre compras y proveedores.
-- Dificultad para conocer ingresos del dia.
+- Falta de control sobre proveedores.
+- Dificultad para conocer ingresos del día.
 
-## 3. Detalles del proceso de programacion
+## 3. Detalles del proceso de programación
 
 Explicar:
 
@@ -35,12 +35,11 @@ Explicar:
 
 ## 4. Elementos del programa
 
-Documentar cada modulo:
+Documentar cada módulo:
 
 - Inventario.
 - Clientes.
 - Proveedores.
-- Compras.
 - Ventas.
 - Corte de caja.
 - Usuarios.
@@ -50,17 +49,17 @@ Documentar cada modulo:
 Registrar problemas reales. Ejemplos:
 
 - Validar existencias antes de vender.
-- Evitar datos vacios.
+- Evitar datos vacíos.
 - Mantener actualizados los totales.
-- Organizar la informacion para que fuera facil de presentar.
+- Organizar la información para que fuera fácil de presentar.
 
 ## 6. Conclusiones por participante
 
-Cada integrante debe escribir una conclusion personal de 4 a 6 lineas. Debe mencionar que aprendio, que aporto y que mejoraria.
+Cada integrante debe escribir una conclusión personal de 4 a 6 líneas. Debe mencionar que aprendió, que aportó y que mejoraría.
 
-## 7. Revision final
+## 7. Revisión final
 
-- Revisar ortografia.
+- Revisar ortografía.
 - Usar capturas legibles.
 - Numerar secciones.
 - Exportar a PDF.

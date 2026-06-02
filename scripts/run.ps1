@@ -4,5 +4,5 @@ if (-not (Test-Path "out")) {
     & "$PSScriptRoot\compile.ps1"
 }
 
-java -cp out com.abarrotes.app.Main
+java -cp "out;lib/*" com.abarrotes.app.Main
 
